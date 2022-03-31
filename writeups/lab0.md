@@ -53,8 +53,10 @@ A standard TCP connection gets terminated by 4-way finalization:
 However, there is another "emergent" way to close a TCP connection:
 
 
-A participant sends an RST packet and abandons the connection
-The other side receives an RST and then abandon the connection as well
+1. A participant sends an RST packet and abandons the connection
+2. The other side receives an RST and then abandon the connection as well
+
+
 In my test with Wireshark, with default socket options, shutdown sends a FIN packet to the other end but it is all it does. Until the other party send you the FIN packet you are still able to receive data. Once this happened, your Receive will get an 0 size result. So if you are the first one to shut down "send", you should close the socket once you finished receiving data.
 
 
