@@ -12,11 +12,15 @@ void DUMMY_CODE(Targs &&... /* unused */) {}
 
 using namespace std;
 
-ByteStream::ByteStream(const size_t capacity) { DUMMY_CODE(capacity); }
+ByteStream::ByteStream(const size_t capacity):stream_(capacity), send_base_{0}, next_seq_num_{0}, window_size_{capacity}, rcv_base_{0}, input_ended_{false} {}
 
 size_t ByteStream::write(const string &data) {
-    DUMMY_CODE(data);
-    return {};
+    size_t l = min(data.size(), remaining_capacity());
+    for (size_t i = 0; i < l; i++){
+        stream_.emplace_back(data[i]);
+    }
+    next_seq_num_ += l;
+    return l;
 }
 
 //! \param[in] len bytes will be copied from the output side of the buffer
@@ -36,7 +40,9 @@ std::string ByteStream::read(const size_t len) {
     return {};
 }
 
-void ByteStream::end_input() {}
+void ByteStream::end_input() {
+    input_ended_ = true;
+}
 
 bool ByteStream::input_ended() const { return {}; }
 
@@ -50,4 +56,6 @@ size_t ByteStream::bytes_written() const { return {}; }
 
 size_t ByteStream::bytes_read() const { return {}; }
 
-size_t ByteStream::remaining_capacity() const { return {}; }
+size_t ByteStream::remaining_capacity() const { 
+    return window_size_ - next_seq_num_;
+}
