@@ -80,3 +80,13 @@ If the TCP stack receives a shutdown with SHUT_RD only, it shall mark this conne
 
 
 If the TCP stack receives a shutdown with SHUT_WR only, it shall mark this connection as no more data can be sent. All pending write requests will be finished, but subsequent write requests will fail. Furthermore, a FIN packet will be sent to another side to inform them we don't have more data to send.
+
+## 双端队列
+|名字|普通队列|双端队列|优先队列|
+|---|-------|-------|-------|
+|头文件|#include <queue>|#include<deque>|#include <queue>|
+|声明(DateType 为任意数据类型)|queue<DateType> name|deque<DateType> name|priority_queue <DateType> name（默认从小到大排序)|
+|取出队首的值*|name.front（）|name.front()|name.back()|name.top()|
+|弹出元素（删掉，不取值）*|name.pop()|name.pop_back()->弹出队尾name.pop_front()->弹出队首|name.pop()|
+|存入元素|name.push|name.push_back()->存入队尾name.push_front()->存入队首|name.push（)|
+|求队列中元素个数|name.size()|name.size()|name.size()|
