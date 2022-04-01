@@ -70,11 +70,11 @@ bool ByteStream::eof() const {
 }
 
 size_t ByteStream::bytes_written() const {
-    return next_seq_num_ - 1;
+    return next_seq_num_ == 0 ? 0 : next_seq_num_ - 1;
 }
 
 size_t ByteStream::bytes_read() const {
-    return send_base_ - 1;
+    return send_base_  == 0 ? 0 : send_base_ - 1;
 }
 
 size_t ByteStream::remaining_capacity() const { 
