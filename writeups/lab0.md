@@ -105,3 +105,243 @@ Class C {
 or you can turn -Wno-reorder
 
 In some cases (not recommendable), b and a initialisation might depend on each other. A naive user might try to alter the initialisation order to get some effect and the Warning would make it clear that it doesn't work
+
+
+## vscode + cmake 配置tasks.json and launch.json
+
+在配置的时候会用到一些vscode的变量，用${}包裹起来的那些。
+${workspaceFolder}是当前工作空间（或vscode所打开根文件夹）在操作系统中绝对路径
+${workspaceFolderBasename}是当前工作空间（或vscode所打开根文件夹）的名称
+
+
+tasks.json 这是VSCode任务的配置文件，通过配置它可以快速执行各种命令。这里我们利用它来配置编译构建流程。我们要执行的任务为建立build文件夹，在build文件夹中使用CMake生成并编译。通过这个任务配置，统一全平台下的程序编译命令。
+
+
+### tasks.json
+```json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        { // 在根文件夹中执行创建文件夹build的命令
+            // 除windows系统外执行的命令为`mkdir -p build`
+            // windows系统是在powershell中执行命令`mkdir -Force build`
+            "label": "build_dir",
+            "command": "mkdir",
+            "type": "shell",
+            "args": [
+                "-p",
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "powershell.exe"
+                    }
+                },
+                "args": [
+                    "-Force",
+                    "build"
+                ],
+            }
+        },
+        { // 在build文件夹中调用cmake进行项目配置
+            // 除windows系统外执行的命令为`cmake -DCMAKE_BUILD_TYPE=<Debug|Release|RelWithDebInfo|MinSizeRel> ../`
+            // windows系统是在visual stuido的环境中执行命令`cmake -DCMAKE_BUILD_TYPE=<Debug|Release|RelWithDebInfo|MinSizeRel>  ../ -G "CodeBlocks - NMake Makefiles"`
+            "label": "cmake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=${input:CMAKE_BUILD_TYPE}",
+                "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON", // 生成compile_commands.json 供c/c++扩展提示使用
+                "../"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build",
+            },
+            "windows": {
+                "args": [
+                    "-DCMAKE_BUILD_TYPE=${input:CMAKE_BUILD_TYPE}",
+                    "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                    "../",
+                    "-G",
+                    "\"CodeBlocks - NMake Makefiles\""
+                ],
+                "options": {
+                    "shell": {
+                        // "executable": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\vcvarsall.bat",
+                        // 需要根据安装的vs版本调用vs工具命令提示符
+                        "executable": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat",
+                        "args": [
+                            "${input:PLATFORM}", //指定平台
+                            "-vcvars_ver=${input:vcvars_ver}", //指定vc环境版本
+                            "&&"
+                        ]
+                    }
+                },
+            },
+            "dependsOn": [
+                "build_dir" // 在task `build_dir` 后执行该task
+            ]
+        },
+        { // 在build文件夹中调用cmake编译构建debug程序
+            // 执行的命令为`cmake --build ./ --target all --`
+            //  windows系统如上需要在visual stuido的环境中执行命令
+            "label": "build",
+            "group": "build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "./",
+                "--target",
+                "all",
+                "--"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build",
+            },
+            "problemMatcher": "$gcc",
+            "windows": {
+                "options": {
+                    "shell": {
+                        // "executable": "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\vcvarsall.bat",
+                        "executable": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat",
+                        "args": [
+                            "${input:PLATFORM}",
+                            "-vcvars_ver=${input:vcvars_ver}",
+                            "&&"
+                        ]
+                    }
+                },
+                "problemMatcher": "$msCompile"
+            },
+            "dependsOn": [
+                "cmake" // 在task `cmake` 后执行该task
+            ]
+        }
+        {
+            "label": "make",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "dependsOn":[
+                "build"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "CMAKE_BUILD_TYPE",
+            "type": "pickString",
+            "description": "What CMAKE_BUILD_TYPE do you want to create?",
+            "options": [
+                "Debug",
+                "Release",
+                "RelWithDebInfo",
+                "MinSizeRel",
+            ],
+            "default": "Debug"
+        },
+        {
+            "id": "PLATFORM",
+            "type": "pickString",
+            "description": "What PLATFORM do you want to create?",
+            "options": [
+                "x86",
+                "amd64",
+                "arm",
+                "x86_arm",
+                "x86_amd64",
+                "amd64_x86",
+                "amd64_arm",
+            ],
+            "default": "amd64"
+        },
+        {
+            "id": "vcvars_ver",
+            "type": "pickString",
+            "description": "What vcvars_ver do you want to create?",
+            "options": [
+                "14.2", // 2019
+                "14.1", // 2017
+                "14.0", // 2015
+            ],
+            "default": "14.2"
+        }
+    ]
+}
+```
+
+
+launch.json 这是VSCode运行调试的配置文件。全平台统一的调试体验就靠它了。依赖于VSCode的C/C++扩展。这里需要告诉VSCode你的C/C++程序在哪，以及运行参数，工作目录等，用哪个调试器调试。
+
+### launch.json
+Predefined variables
+The following predefined variables are supported:
+
+- ${workspaceFolder} - the path of the folder opened in VS Code
+- ${workspaceFolderBasename} - the name of the folder opened in VS Code without any slashes (/)
+- ${file} - the current opened file
+- ${fileWorkspaceFolder} - the current opened file's workspace folder
+- ${relativeFile} - the current opened file relative to workspaceFolder
+- ${relativeFileDirname} - the current opened file's dirname relative to workspaceFolder
+- ${fileBasename} - the current opened file's basename
+- ${fileBasenameNoExtension} - the current opened file's basename with no file extension
+- ${fileDirname} - the current opened file's dirname
+- ${fileExtname} - the current opened file's extension
+- ${cwd} - the task runner's current working directory on startup
+- ${lineNumber} - the current selected line number in the active file
+- ${selectedText} - the current selected text in the active file
+- ${execPath} - the path to the running VS Code executable
+- ${defaultBuildTask} - the name of the default build task
+- ${pathSeparator} - the character used by the operating system to separate components in file paths
+Note: The ${workspaceRoot} variable is deprecated in favor of the ${workspaceFolder} variable.
+
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Debug", //名称
+            "type": "cppdbg", //调试类型，除使用msvc进行调试外，均为该类型
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}", //指定C/C++程序位置
+            "args": [], //指定运行参数
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}", //指定工作目录
+            "preLaunchTask": "make", //在调试前会先调用build_debug这个task编译构建程序
+            "environment": [],
+            "externalConsole": false,
+            "osx": { //macOS的特定配置
+                // "miDebuggerPath": "/Applications/Xcode.app/Contents/ Developer/usr/bin/lldb-mi", //修改使用的lldb-mi，一般不需要修改
+                "MIMode": "lldb" //指定使用lldb进行调试
+            },
+            "linux": { //linux的特定配置
+                "MIMode": "gdb", //指定使用gdb调试
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            "windows": { //windows的特定配置
+                "type": "cppvsdbg", //指定使用msvc进行调试
+                "program": "${workspaceFolder}/build/${workspaceFolderBasename}.exe", //指定C/C++程序位置
+            }
+        }
+    ]
+}
+```

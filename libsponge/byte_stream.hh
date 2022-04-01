@@ -16,10 +16,6 @@ class ByteStream {
     size_t send_base_;
     size_t next_seq_num_;
     size_t window_size_;
-    size_t rcv_base_;
-    size_t written_n_;
-    size_t read_n_;
-    size_t buffer_size_;
     bool eof_;
 
     bool _error{};  //!< Flag indicating that the stream suffered an error.
@@ -38,6 +34,8 @@ class ByteStream {
 
     //! \returns the number of additional bytes that the stream has space for
     size_t remaining_capacity() const;
+
+    size_t written_not_read() const;
 
     //! Signal that the byte stream has reached its ending
     void end_input();

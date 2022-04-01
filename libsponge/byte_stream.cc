@@ -7,10 +7,6 @@ ByteStream::ByteStream(const size_t capacity)
     , send_base_{0}
     , next_seq_num_{0}
     , window_size_{capacity}
-    , rcv_base_{0}
-    , written_n_{0}
-    , read_n_{0}
-    , buffer_size_{0}
     , eof_{false} {}
 
 size_t ByteStream::write(const string &data) {
@@ -19,24 +15,23 @@ size_t ByteStream::write(const string &data) {
         stream_.emplace_back(data[i]);
     }
     next_seq_num_ += l;
-    written_n_ += l;
     return l;
 }
 
 //! \param[in] len bytes will be copied from the output side of the buffer
 string ByteStream::peek_output(const size_t len) const {
-    string ret(stream_.begin(), stream_.begin() + min(len, buffer_size_));
+    string ret(stream_.begin(), stream_.begin() + min(len, written_not_read()));
     return ret;
 }
 
 //! \param[in] len bytes will be removed from the output side of the buffer
 void ByteStream::pop_output(const size_t len) {
-    size_t l = min(len, buffer_size_);
+    size_t l = min(len, written_not_read());
     for(size_t i = 0; i < l; ++i){
         stream_.pop_front();
     }
-    buffer_size_ -= l;
-    read_n_ += l;
+
+    send_base_ += l;
 }
 
 //! Read (i.e., copy and then pop) the next "len" bytes of the stream
@@ -44,13 +39,13 @@ void ByteStream::pop_output(const size_t len) {
 //! \returns a string
 std::string ByteStream::read(const size_t len) {
     string ret;
-    size_t l = min(len, buffer_size_);
+    size_t l = min(len, written_not_read());
     for(size_t i = 0; i < l; i++){
         ret.push_back(stream_[i]);
         stream_.pop_front();
     }
-    buffer_size_ -= l;
-    read_n_ += l;
+
+    send_base_ += l;
     return ret;
 }
 
@@ -63,11 +58,11 @@ bool ByteStream::input_ended() const {
 }
 
 size_t ByteStream::buffer_size() const {
-    return buffer_size_;
+    return written_not_read();
 }
 
 bool ByteStream::buffer_empty() const {
-    return buffer_size_ == 0;
+    return written_not_read() == 0;
 }
 
 bool ByteStream::eof() const {
@@ -75,13 +70,17 @@ bool ByteStream::eof() const {
 }
 
 size_t ByteStream::bytes_written() const {
-    return written_n_;
+    return next_seq_num_ - 1;
 }
 
 size_t ByteStream::bytes_read() const {
-    return read_n_;
+    return send_base_ - 1;
 }
 
 size_t ByteStream::remaining_capacity() const { 
-    return window_size_ - next_seq_num_;
+    return window_size_ - written_not_read();
+}
+
+size_t ByteStream::written_not_read() const{
+    return next_seq_num_ - send_base_;
 }
