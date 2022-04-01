@@ -90,3 +90,18 @@ If the TCP stack receives a shutdown with SHUT_WR only, it shall mark this conne
 |弹出元素（删掉，不取值）*|name.pop()|name.pop_back()->弹出队尾name.pop_front()->弹出队首|name.pop()|
 |存入元素|name.push|name.push_back()->存入队尾name.push_front()->存入队首|name.push（)|
 |求队列中元素个数|name.size()|name.size()|name.size()|
+
+
+## gcc语法检查
+Make sure the members appear in the initializer list in the same order as they appear in the class
+
+```cpp
+Class C {
+   int a;
+   int b;
+   C():b(1),a(2){} //warning, should be C():a(2),b(1)
+}
+```
+or you can turn -Wno-reorder
+
+In some cases (not recommendable), b and a initialisation might depend on each other. A naive user might try to alter the initialisation order to get some effect and the Warning would make it clear that it doesn't work

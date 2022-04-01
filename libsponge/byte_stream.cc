@@ -1,18 +1,17 @@
 #include "byte_stream.hh"
 
-// Dummy implementation of a flow-controlled in-memory byte stream.
-
-// For Lab 0, please replace with a real implementation that passes the
-// automated checks run by `make check_lab0`.
-
-// You will need to add private members to the class declaration in `byte_stream.hh`
-
-template <typename... Targs>
-void DUMMY_CODE(Targs &&... /* unused */) {}
-
 using namespace std;
 
-ByteStream::ByteStream(const size_t capacity):stream_(capacity), send_base_{0}, next_seq_num_{0}, window_size_{capacity}, rcv_base_{0}, eof_{false}, written_n_{0}, read_n_{0}, buffer_size_{0} {}
+ByteStream::ByteStream(const size_t capacity)
+    : stream_(capacity)
+    , send_base_{0}
+    , next_seq_num_{0}
+    , window_size_{capacity}
+    , rcv_base_{0}
+    , written_n_{0}
+    , read_n_{0}
+    , buffer_size_{0}
+    , eof_{false} {}
 
 size_t ByteStream::write(const string &data) {
     size_t l = min(data.size(), remaining_capacity());
@@ -26,19 +25,33 @@ size_t ByteStream::write(const string &data) {
 
 //! \param[in] len bytes will be copied from the output side of the buffer
 string ByteStream::peek_output(const size_t len) const {
-    DUMMY_CODE(len);
-    return {};
+    string ret(stream_.begin(), stream_.begin() + min(len, buffer_size_));
+    return ret;
 }
 
 //! \param[in] len bytes will be removed from the output side of the buffer
-void ByteStream::pop_output(const size_t len) { DUMMY_CODE(len); }
+void ByteStream::pop_output(const size_t len) {
+    size_t l = min(len, buffer_size_);
+    for(size_t i = 0; i < l; ++i){
+        stream_.pop_front();
+    }
+    buffer_size_ -= l;
+    read_n_ += l;
+}
 
 //! Read (i.e., copy and then pop) the next "len" bytes of the stream
 //! \param[in] len bytes will be popped and returned
 //! \returns a string
 std::string ByteStream::read(const size_t len) {
-    DUMMY_CODE(len);
-    return {};
+    string ret;
+    size_t l = min(len, buffer_size_);
+    for(size_t i = 0; i < l; i++){
+        ret.push_back(stream_[i]);
+        stream_.pop_front();
+    }
+    buffer_size_ -= l;
+    read_n_ += l;
+    return ret;
 }
 
 void ByteStream::end_input() {

@@ -12,7 +12,7 @@
 class ByteStream {
   private:
 
-    deque<char> stream_;
+    std::deque<char> stream_;
     size_t send_base_;
     size_t next_seq_num_;
     size_t window_size_;
