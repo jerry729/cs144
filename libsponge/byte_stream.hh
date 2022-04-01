@@ -17,7 +17,10 @@ class ByteStream {
     size_t next_seq_num_;
     size_t window_size_;
     size_t rcv_base_;
-    bool input_ended_;
+    size_t written_n_;
+    size_t read_n_;
+    size_t buffer_size_;
+    bool eof_;
 
     bool _error{};  //!< Flag indicating that the stream suffered an error.
 
