@@ -91,6 +91,8 @@ If the TCP stack receives a shutdown with SHUT_WR only, it shall mark this conne
 |存入元素|name.push|name.push_back()->存入队尾name.push_front()->存入队首|name.push（)|
 |求队列中元素个数|name.size()|name.size()|name.size()|
 
+**双端队列用size初始化会全部初始化为0！！**
+
 
 ## gcc语法检查
 Make sure the members appear in the initializer list in the same order as they appear in the class

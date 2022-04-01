@@ -3,7 +3,7 @@
 using namespace std;
 
 ByteStream::ByteStream(const size_t capacity)
-    : stream_(capacity)
+    : stream_()
     , send_base_{0}
     , next_seq_num_{0}
     , window_size_{capacity}
@@ -20,7 +20,11 @@ size_t ByteStream::write(const string &data) {
 
 //! \param[in] len bytes will be copied from the output side of the buffer
 string ByteStream::peek_output(const size_t len) const {
-    string ret(stream_.begin(), stream_.begin() + min(len, written_not_read()));
+    string ret;
+    size_t l = min(len, written_not_read());
+    for(size_t i = 0; i < l; i++){
+        ret.push_back(stream_[i]);
+    }
     return ret;
 }
 
@@ -70,11 +74,11 @@ bool ByteStream::eof() const {
 }
 
 size_t ByteStream::bytes_written() const {
-    return next_seq_num_ == 0 ? 0 : next_seq_num_ - 1;
+    return next_seq_num_;
 }
 
 size_t ByteStream::bytes_read() const {
-    return send_base_  == 0 ? 0 : send_base_ - 1;
+    return send_base_;
 }
 
 size_t ByteStream::remaining_capacity() const { 
