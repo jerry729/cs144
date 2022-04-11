@@ -34,7 +34,7 @@ class StreamReassembler {
     size_t _expected_index;
     size_t _nUnassembled_bytes;
     bool _eof;
-    std::set<UnassembledSubstring> _auxiliary_storage;
+    std::set<UnassembledSubstring> _Unassembled;
 
   public:
     //! \brief Construct a `StreamReassembler` that will store up to `capacity` bytes.
@@ -51,6 +51,7 @@ class StreamReassembler {
     //! \param index indicates the index (place in sequence) of the first byte in `data`
     //! \param eof the last byte of `data` will be the last byte in the entire stream
     void push_substring(const std::string &data, const size_t index, const bool eof);
+    int merge_substring(size_t& index, std::string& data, std::set<UnassembledSubstring>::iterator& it);
 
     //! \name Access the reassembled byte stream
     //!@{

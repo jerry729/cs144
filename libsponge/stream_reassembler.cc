@@ -1,15 +1,5 @@
 #include "stream_reassembler.hh"
 
-// Dummy implementation of a stream reassembler.
-
-// For Lab 1, please replace with a real implementation that passes the
-// automated checks run by `make check_lab1`.
-
-// You will need to add private members to the class declaration in `stream_reassembler.hh`
-
-template <typename... Targs>
-void DUMMY_CODE(Targs &&... /* unused */) {}
-
 using namespace std;
 
 StreamReassembler::StreamReassembler(const size_t capacity) 
@@ -27,48 +17,101 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
     if(data.size() > _capacity){
         _eof = false;
     }
-    //还是忽略了一个问题，set内确实不会有重复和乱序，但是如果已经写入了bytestream又来了一个重复的
-    if(empty()){
-        if (index == _expected_index && data.size() <= _output.remaining_capacity()){
-            _output.write(data);
-        }
-        else if(data.size() + unassembled_bytes() < remaining_unassembled_capacity()){
 
-        }
-        else if(index > expected_index() && data.size() <= _capacity){
-            _auxiliary_storage.insert(UnassembledSubstring(index, data));
-        }
-        //else discard
-    }
-    else{
-        if(data.size() <= _capacity){
-            _auxiliary_storage.insert(UnassembledSubstring(index, data));
-        }
-        // else discard
-        if(_auxiliary_storage.find(UnassembledSubstring(expected_index())) != _auxiliary_storage.end()){
-            //find max_ordered and max_ordered_byte_size
-            set<UnassembledSubstring>::iterator it;
-            size_t max_ordered_byte_size = 0;
-            for(it = _auxiliary_storage.begin(); it != _auxiliary_storage.end(); it++){
-                if((*it).index + (*it).substring.size() + 1 != (*(it++)).index){
-                    break;
-                }
-                if(max_ordered_byte_size + (*it).substring.size() > _output.remaining_capacity()){
-                    it--;
-                    break;
-                }else{
-                    max_ordered_byte_size += (*it).substring.size();
-                }
+    size_t first_unacceptable = _expected_index + (_capacity - _output.written_not_read());
+
+    string resData(data);
+    size_t resIndex = index;
+
+    if(index < _expected_index){
+        if(index + data.size() - 1 < _expected_index){
+            if(_eof){
+                _output.end_input();
             }
-            //write a max_oredered_size number of bytes into ByteStream
-            set<UnassembledSubstring>::iterator it2;
-            for(it2 = _auxiliary_storage.begin(); it2 != it; it2++){
-                _output.write((*it2).substring);
-                _auxiliary_storage.erase(it2);
+            return;
+        }
+        //trunc overlapping data
+        resData = resData.substr(_expected_index - index);
+        resIndex = _expected_index;
+    }
+    if(resIndex + resData.size() > first_unacceptable){
+        //trunc data, discard the bytes exceed the capacity
+        resData = resData.substr(0, first_unacceptable - resIndex);
+    }
+
+    set<UnassembledSubstring>::iterator i;
+    i = _Unassembled.lower_bound(UnassembledSubstring(resIndex, resData));
+    while(i != _Unassembled.begin()){
+        if(i == _Unassembled.end()){
+            i--;
+        }
+        if(size_t dele_num = merge_substring(resIndex, resData, i)){
+            _nUnassembled_bytes -= dele_num;
+            if(i != _Unassembled.begin()){
+                _Unassembled.erase(i--);
+            }else{
+                _Unassembled.erase(i);
+                break;
             }
         }
-        //else stay in auxiliary storage
+        else{
+            if(i != _Unassembled.begin()){
+                i--;
+            }else{
+                break;
+            }
+        }
     }
+
+    i = _Unassembled.lower_bound(UnassembledSubstring(resIndex, resData));
+    while(i != _Unassembled.end()){
+        if(size_t dele_num = merge_substring(resIndex, resData, i)){
+            _nUnassembled_bytes -= dele_num;
+            _Unassembled.erase(i++);
+        }else{
+            break;
+        }
+    }
+
+    if(resIndex <= _expected_index){
+        string final_data(resData.begin() - (_expected_index - resIndex), resData.end());
+        size_t size_written2stream = _output.write(final_data);
+        _expected_index += size_written2stream;
+    }else{
+        _Unassembled.insert(UnassembledSubstring(resIndex, resData));
+        _nUnassembled_bytes += resData.size();
+    }
+
+    if(empty() && _eof){
+        _output.end_input();
+    }
+    return;
+}
+
+int StreamReassembler::merge_substring(size_t& index, std::string& data, std::set<UnassembledSubstring>::iterator& it){
+    size_t l2 = it -> index, r2 = l2 + (it -> substring).size() - 1;
+    size_t l1 = index, r1 = l1 + data.size() - 1;
+
+    if(l2 > r1 + 1 || l1 > r2 + 1){
+        return 0;
+    }
+
+    size_t dele_num = (it -> substring).size();
+    if(l2 > l1){
+        if(r1 < r2){
+        data += string((it->substring).begin() + r1 - l2, (it->substring).end());    
+    }//else pass
+    }else{
+        string data2 = it -> substring;
+        if(r1 > r2){
+            data2 += string(data.begin() + r2 - l1, data.end());
+        }
+        data.assign(data2);
+    }
+
+    index = min(l2, l1);
+    
+    return dele_num;
 }
 
 size_t StreamReassembler::unassembled_bytes() const {
