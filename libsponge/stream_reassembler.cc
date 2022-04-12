@@ -14,7 +14,7 @@ StreamReassembler::StreamReassembler(const size_t capacity)
 //! possibly out-of-order, from the logical stream, and assembles any newly
 //! contiguous substrings and writes them into the output stream in order.
 void StreamReassembler::push_substring(const string &data, const size_t index, const bool eof) {
-    _eof = eof;
+    _eof = _eof | eof; // When a eof arrived before !eof. So at the end of this function, make sure the UnassembledBytes is empty and eof is true before end the entire input.
     if(data.size() > _capacity){
         _eof = false;
     }
