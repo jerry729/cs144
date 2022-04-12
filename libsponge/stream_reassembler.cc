@@ -38,6 +38,7 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
     if(resIndex + resData.size() > first_unacceptable){
         //trunc data, discard the bytes exceed the capacity
         resData = resData.substr(0, first_unacceptable - resIndex);
+        _eof = false;
     }
 
     set<UnassembledSubstring>::iterator i;
