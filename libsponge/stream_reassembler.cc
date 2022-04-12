@@ -7,7 +7,8 @@ StreamReassembler::StreamReassembler(const size_t capacity)
 , _capacity(capacity)
 , _expected_index(0)
 , _nUnassembled_bytes(0)
-, _eof(false) {}
+, _eof(false)
+, _Unassembled() {}
 
 //! \details This function accepts a substring (aka a segment) of bytes,
 //! possibly out-of-order, from the logical stream, and assembles any newly
@@ -75,7 +76,7 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
 
     if(resIndex <= _expected_index){
         string final_data(resData.begin() - (_expected_index - resIndex), resData.end());
-        size_t size_written2stream = _output.write(final_data);
+        size_t size_written2stream = _output.write(final_data); 
         _expected_index += size_written2stream;
     }else{
         _Unassembled.insert(UnassembledSubstring(resIndex, resData));
@@ -89,22 +90,22 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
 }
 
 int StreamReassembler::merge_substring(size_t& index, std::string& data, std::set<UnassembledSubstring>::iterator& it){
-    size_t l2 = it -> index, r2 = l2 + (it -> substring).size() - 1;
+    size_t l2 = it -> _index, r2 = l2 + (it -> _substring).size() - 1;
     size_t l1 = index, r1 = l1 + data.size() - 1;
 
     if(l2 > r1 + 1 || l1 > r2 + 1){
         return 0;
     }
 
-    size_t dele_num = (it -> substring).size();
+    size_t dele_num = (it -> _substring).size();
     if(l2 > l1){
         if(r1 < r2){
-        data += string((it->substring).begin() + r1 - l2, (it->substring).end());    
+        data += string((it -> _substring).begin() + r1 - l2 + 1, (it -> _substring).end());    
     }//else pass
     }else{
-        string data2 = it -> substring;
+        string data2 = it -> _substring;
         if(r1 > r2){
-            data2 += string(data.begin() + r2 - l1, data.end());
+            data2 += string(data.begin() + r2 - l1 + 1, data.end());
         }
         data.assign(data2);
     }

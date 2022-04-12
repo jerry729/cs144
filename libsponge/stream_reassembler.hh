@@ -9,18 +9,15 @@
 
 class UnassembledSubstring{
   public:
-  size_t index;
-  std::string substring;
-  UnassembledSubstring(const size_t index)
-  : index(index)
-  , substring("") {}
+  size_t _index;
+  std::string _substring;
 
   UnassembledSubstring(const size_t index, const std::string& substring)
-  : index(index)
-  , substring(substring) {}
+  : _index(index)
+  , _substring(substring) {}
 
   bool operator<(const UnassembledSubstring& other ) const{
-    return this -> index < other.index;
+    return this -> _index < other._index;
   }
 };
 

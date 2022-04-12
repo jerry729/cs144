@@ -45,7 +45,7 @@ std::string ByteStream::read(const size_t len) {
     string ret;
     size_t l = min(len, written_not_read());
     for(size_t i = 0; i < l; i++){
-        ret.push_back(stream_[i]);
+        ret.push_back(stream_.front());
         stream_.pop_front();
     }
 
