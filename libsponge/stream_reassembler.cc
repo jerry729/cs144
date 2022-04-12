@@ -19,6 +19,13 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
         _eof = false;
     }
 
+    if(data.empty() || index + data.size() < _expected_index){
+        if(_eof){
+            _output.end_input();
+        }
+        return;
+    }
+
     size_t first_unacceptable = _expected_index + (_capacity - _output.written_not_read());
 
     string resData(data);

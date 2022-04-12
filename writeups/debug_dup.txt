@@ -1,0 +1,349 @@
+        Initialized (capacity = 65000)
+        Action:      substring submitted with data "abcdefgh", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 8, and stream_out().read(8) returned the string "abcdefgh"
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "a", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "bcdef", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "efg", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "b", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "fg", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "fg", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "def", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "g", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "b", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "abcde", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "bcdefg", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "gh", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "defgh", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cdefg", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "e", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "fgh", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "efgh", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "bcd", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "abc", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "gh", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "abc", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "e", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "abcdef", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "abcdefgh", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "b", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "gh", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "fgh", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "a", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "abcd", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cde", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "gh", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "defg", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "d", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "fg", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "efgh", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "gh", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "ab", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cdef", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cd", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "a", index `0`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "h", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "d", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cdefg", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "de", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `7`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "efgh", index `4`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cde", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "g", index `6`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cd", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "cde", index `2`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "f", index `5`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "", index `8`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "bcdefgh", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "bc", index `1`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
+        Action:      substring submitted with data "defg", index `3`, eof `0`
+        Expectation: net bytes assembled = 8
+        Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+        Expectation: not at EOF
