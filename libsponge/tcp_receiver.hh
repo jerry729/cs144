@@ -22,6 +22,8 @@ class TCPReceiver {
     WrappingInt32 _seq;
     std::optional<WrappingInt32> _isn;
     std::optional<WrappingInt32> _ack;
+    bool _fin_rcved;
+    bool _syn_rcved;
 
   public:
     //! \brief Construct a TCP receiver
@@ -33,7 +35,9 @@ class TCPReceiver {
     , _capacity(capacity)
     , _seq(0)
     , _isn()
-    , _ack() {}
+    , _ack()
+    , _fin_rcved(false)
+    , _syn_rcved(false) {}
 
     //! \name Accessors to provide feedback to the remote TCPSender
     //!@{

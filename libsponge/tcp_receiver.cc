@@ -15,15 +15,18 @@ void TCPReceiver::segment_received(const TCPSegment &seg) {
     const TCPHeader& header = seg.header();
 
     if(header.syn){
+        _syn_rcved = true;
         _isn = header.seqno;
         if(_isn != WrappingInt32(UINT32_MAX)){
             _ack = _isn.value() + 1;
         }else{
             _ack = WrappingInt32(0);
         }
-        auto& exptd_idx = _reassembler.expected_index();
-        exptd_idx += 1;
     }
+    _fin_rcved = _fin_rcved | (header.fin & _syn_rcved);
+
+    //int tst_i = 0;
+    //printf("--%d-- %u %u\n",tst_i, _isn -> raw_value(), header.seqno.raw_value());
 
     if(!_isn.has_value()){
         return;
@@ -31,16 +34,26 @@ void TCPReceiver::segment_received(const TCPSegment &seg) {
 
 
     string pl = seg.payload().copy();
-    _reassembler.push_substring(pl, unwrap(header.seqno, *_isn, _reassembler.last_assembled_index()), header.fin);
-    _ack = wrap(_reassembler.expected_index(), _isn.value());
+    uint64_t tmp = unwrap(header.seqno, *_isn, _reassembler.expected_index());
+    tmp = header.syn ? tmp : tmp - 1;
+    //printf("++%d++ tmp:%lu isn:%u seq:%u\n",++tst_i, tmp, _isn -> raw_value(), header.seqno.raw_value());
+    
+    //printf("++%d++ ack:%u\n",++tst_i, _ack->raw_value());
 
-    if(header.fin){
+    _reassembler.push_substring(pl, tmp, header.fin);
+    _ack = wrap(_reassembler.expected_index() + 1, _isn.value());
+    //printf("--%d-- ack:%u\n",++tst_i, _ack->raw_value());
+
+    
+    if(_fin_rcved && _reassembler.empty()){
         if(_ack != WrappingInt32(UINT32_MAX)){
             _ack = _ack.value() + 1;
         }else{
             _ack = WrappingInt32(0);
         }
     }
+
+    //printf("####################################\n");
 
 }
 
