@@ -24,7 +24,7 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
             _output.end_input();
         }
         return;
-    }
+    }//这种情况是连接建立或拆除的时候有些payload为空的报文段可能出现 但是header是有eof信息的
 
     size_t first_unacceptable = _expected_index + (_capacity - _output.written_not_read());
 
@@ -108,8 +108,8 @@ int StreamReassembler::merge_substring(size_t& index, std::string& data, std::se
     size_t dele_num = (it -> _substring).size();
     if(l2 > l1){
         if(r1 < r2){
-        data += string((it -> _substring).begin() + r1 - l2 + 1, (it -> _substring).end());    
-    }//else pass
+            data += string((it -> _substring).begin() + r1 - l2 + 1, (it -> _substring).end());    
+        }//else pass
     }else{
         string data2 = it -> _substring;
         if(r1 > r2){
