@@ -29,10 +29,9 @@ void TCPReceiver::segment_received(const TCPSegment &seg) {
         return;
     }
 
-    uint64_t window_start = _ack.has_value() ? unwrap(*ackno(), *_isn, _reassembler.last_assembled_index()) : 0;
 
     string pl = seg.payload().copy();
-    _reassembler.push_substring(pl, window_start, header.fin);
+    _reassembler.push_substring(pl, unwrap(header.seqno, *_isn, _reassembler.last_assembled_index()), header.fin);
     _ack = wrap(_reassembler.expected_index(), _isn.value());
 
     if(header.fin){
