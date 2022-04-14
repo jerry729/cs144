@@ -66,7 +66,9 @@ class StreamReassembler {
     //! \returns `true` if no substrings are waiting to be assembled
     bool empty() const;
 
-    size_t expected_index() const { return _expected_index;}
+    size_t last_assembled_index() const { return _expected_index == 0 ? 0 : _expected_index - 1; }
+
+    size_t& expected_index() { return _expected_index; }
 };
 
 #endif  // SPONGE_LIBSPONGE_STREAM_REASSEMBLER_HH
