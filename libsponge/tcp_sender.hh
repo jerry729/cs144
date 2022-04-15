@@ -22,6 +22,7 @@ class TCPSender {
 
     //! outbound queue of segments that the TCPSender wants sent
     std::queue<TCPSegment> _segments_out{};
+    std::queue<TCPSegment> _segments_outstanding{};
 
     //! retransmission timer for the connection
     unsigned int _initial_retransmission_timeout;
@@ -32,7 +33,10 @@ class TCPSender {
     //! the (absolute) sequence number for the next byte to be sent
     uint64_t _next_seqno{0};
 
+    uint64_t _window_size;
+    uint64_t _first_not_acked;
     size_t _n_consecutive_retrans;
+
     RetransmissionTimer _timer;
 
   public:
@@ -158,7 +162,7 @@ class RetransmissionTimer{
       _rto = _initial_rto;
     }
 
-    //! The difference between restart and start is restart would double the timeout interval and it was expected to call when retransmit an unacked seg
+    //! The difference between restart and start is that restart would keep the doubled timeout interval and it was expected to call when retransmit an unacked seg
     void restart(){
       _is_timeout = false;
       _is_started = true;
