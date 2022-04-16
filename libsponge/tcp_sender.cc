@@ -122,6 +122,7 @@ void TCPSender::ack_received(const WrappingInt32 ackno, const uint16_t window_si
         }
     }
     _first_not_acked = ackno;
+    _n_consecutive_retrans = 0;
     if(bytes_in_flight() > 0){
         _timer.start(_initial_retransmission_timeout);
     }else{
@@ -137,12 +138,8 @@ void TCPSender::tick(const size_t ms_since_last_tick) {
 
     if(_timer.is_expired()){
         _segments_out.push(_segments_outstanding.front());
-        if(_window_size > 0){
-           _n_consecutive_retrans++;
-           _timer.restart();
-        }else{
-            _timer.start();
-        }
+        _n_consecutive_retrans++;
+        _timer.restart();
     }
 }
 

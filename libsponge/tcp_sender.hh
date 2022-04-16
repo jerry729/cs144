@@ -57,7 +57,7 @@ class RetransmissionTimer{
 
     void timer_tick(const size_t& ms_since_last_tick) {
       _tcpsender_total_alive_time += ms_since_last_tick;
-      if(_tcpsender_total_alive_time - _start_tmstmp > _rto){
+      if(_tcpsender_total_alive_time - _start_tmstmp >= _rto){
         _is_timeout = true;
         _is_started = false;
       }
