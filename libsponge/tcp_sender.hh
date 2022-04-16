@@ -34,7 +34,7 @@ class TCPSender {
     uint64_t _next_seqno{0};
 
     uint64_t _window_size;
-    uint64_t _first_not_acked;
+    WrappingInt32 _first_not_acked;
     size_t _n_consecutive_retrans;
 
     RetransmissionTimer _timer;
@@ -121,7 +121,7 @@ class RetransmissionTimer{
     , _tcpsender_total_alive_time(0) 
     , _start_tmstmp(0) {}
 
-    //! Timer starts when accepting data from upper layer or when accepting ACK
+    //! This overloading is for Round Trip Time re-evaluation
     void start(const unsigned int& initial_rto){
       _is_started = true;
       _is_timeout = false;
@@ -129,6 +129,7 @@ class RetransmissionTimer{
       _start_tmstmp = _tcpsender_total_alive_time;
     }
 
+    //! Timer starts when accepting data from upper layer or when accepting ACK
     void start(){
       _is_started = true;
       _is_timeout = false;
@@ -168,6 +169,10 @@ class RetransmissionTimer{
       _is_started = true;
       reset_double_interval();
       _start_tmstmp = _tcpsender_total_alive_time;
+    }
+
+    bool is_started(){
+      return _is_started;
     }
 
 };
