@@ -117,6 +117,7 @@ class TCPSender {
     uint64_t _window_size;
     WrappingInt32 _first_not_acked;
     size_t _n_consecutive_retrans;
+    bool _eof_set;
 
     RetransmissionTimer _timer;
 

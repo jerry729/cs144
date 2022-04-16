@@ -24,6 +24,7 @@ TCPSender::TCPSender(const size_t capacity, const uint16_t retx_timeout, const s
     , _window_size(0)
     ,  _first_not_acked(0)
     , _n_consecutive_retrans(0)
+    , _eof_set(false)
     , _timer(retx_timeout) {}
 
 uint64_t TCPSender::bytes_in_flight() const {
@@ -43,6 +44,7 @@ void TCPSender::fill_window() {
 
     if( _window_size <= bytes_in_flight() && bytes_in_flight() != 0){
         // there are not space vailable in the window
+        _eof_set = _eof_set | _stream.input_ended();
         return;
     }
     uint64_t payload_len = _window_size - bytes_in_flight();
@@ -64,7 +66,7 @@ void TCPSender::fill_window() {
 
     if(!_stream.buffer_empty()){
         //there still are new bytes to be read
-        if(!_stream.input_ended()){
+        if(!(_eof_set | _stream.input_ended())){
             if(_stream.buffer_size() < payload_len){
                 payload_len = _stream.buffer_size();
             }
@@ -75,19 +77,21 @@ void TCPSender::fill_window() {
                 payload_len = _stream.buffer_size();
                 if(payload_len <= TCPConfig::MAX_PAYLOAD_SIZE){
                     header.fin = true;
-                    payload_len -= 1;
+                    _eof_set = false;
                     data = _stream.read(payload_len);
                 }else{
                     data = _stream.read(TCPConfig::MAX_PAYLOAD_SIZE);
+                    _eof_set = true;
                 }
             }else{
                 payload_len = min(payload_len - 1, TCPConfig::MAX_PAYLOAD_SIZE);
                 data = _stream.read(payload_len);
+                _eof_set = true;
             }
         }
         payload = Buffer(move(data));
     }else{
-        if(_stream.eof()){
+        if(_eof_set | _stream.eof()){
             header.fin = true;
         }
     }
@@ -109,11 +113,11 @@ void TCPSender::fill_window() {
 //! \param window_size The remote receiver's advertised window size
 void TCPSender::ack_received(const WrappingInt32 ackno, const uint16_t window_size) {
 
+    _window_size = window_size;
+
     if(ackno.raw_value() <= _first_not_acked.raw_value()){
         return;
     }
-
-    _window_size = window_size;
 
     while(_first_not_acked.raw_value() < ackno.raw_value()){
         _segments_outstanding.pop();
