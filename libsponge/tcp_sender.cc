@@ -31,7 +31,8 @@ uint64_t TCPSender::bytes_in_flight() const {
     if(_segments_outstanding.empty()){
         return 0;
     }
-    return _segments_outstanding.back().length_in_sequence_space() + _segments_outstanding.back().header().seqno.raw_value() - _segments_outstanding.front().header().seqno.raw_value();
+    size_t x = _segments_outstanding.back().length_in_sequence_space() + _segments_outstanding.back().header().seqno.raw_value() - _segments_outstanding.front().header().seqno.raw_value();
+    return x;
 }
 
 void TCPSender::fill_window() {
@@ -55,22 +56,26 @@ void TCPSender::fill_window() {
     if(next_seqno() == _isn){
         // is syn byte in this seg?
         header.syn = true;
+        payload_len -= 1;
     }
+
+    // string bs = _stream.peek_output(_stream.buffer_size());
+    // printf("%s \n##################\n", bs.c_str());
+
     if(!_stream.buffer_empty()){
         //there still are new bytes to be read
         if(!_stream.input_ended()){
-            if(_stream.buffer_size() >= payload_len){
-                --payload_len;
-            }else{
+            if(_stream.buffer_size() < payload_len){
                 payload_len = _stream.buffer_size();
             }
             payload_len = min(payload_len, TCPConfig::MAX_PAYLOAD_SIZE);
             data = _stream.read(payload_len);
         }else{
-            if(_stream.buffer_size() + 2 <= payload_len){
+            if(_stream.buffer_size() <= payload_len - 1){
                 payload_len = _stream.buffer_size();
                 if(payload_len <= TCPConfig::MAX_PAYLOAD_SIZE){
                     header.fin = true;
+                    payload_len -= 1;
                     data = _stream.read(payload_len);
                 }else{
                     data = _stream.read(TCPConfig::MAX_PAYLOAD_SIZE);
@@ -113,11 +118,10 @@ void TCPSender::ack_received(const WrappingInt32 ackno, const uint16_t window_si
     while(_first_not_acked.raw_value() < ackno.raw_value()){
         _segments_outstanding.pop();
         if(_segments_outstanding.empty()){
-            _first_not_acked = ackno;
             break;
         }
-        _first_not_acked = _segments_outstanding.front().header().seqno;
     }
+    _first_not_acked = ackno;
     if(bytes_in_flight() > 0){
         _timer.start(_initial_retransmission_timeout);
     }else{
