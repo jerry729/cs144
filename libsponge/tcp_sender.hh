@@ -9,6 +9,87 @@
 #include <functional>
 #include <queue>
 
+//! \brief The timer maitained by TCPSender
+
+//! The only job is to maintain the TCP_sender_total_alive_time and the duration since timer started ( start method called ).
+//! It can automatically terminate when timeout
+class RetransmissionTimer{
+  private:
+    unsigned int _initial_rto;
+    unsigned int _rto;
+
+    bool _is_started;
+    bool _is_timeout;
+
+    size_t _tcpsender_total_alive_time;
+    size_t _start_tmstmp;
+
+  public:
+
+    RetransmissionTimer(unsigned int initial_rto)
+    : _initial_rto(initial_rto)
+    , _rto(initial_rto)
+    , _is_started(false)
+    , _is_timeout(false) 
+    , _tcpsender_total_alive_time(0) 
+    , _start_tmstmp(0) {}
+
+    //! This overloading is for Round Trip Time re-evaluation
+    void start(const unsigned int& initial_rto){
+      _is_started = true;
+      _is_timeout = false;
+      reset_init_inverval(initial_rto);
+      _start_tmstmp = _tcpsender_total_alive_time;
+    }
+
+    //! Timer starts when accepting data from upper layer or when accepting ACK
+    void start(){
+      _is_started = true;
+      _is_timeout = false;
+      _rto = _initial_rto;
+      _start_tmstmp = _tcpsender_total_alive_time;
+    }
+
+    void stop(){
+      _is_started = false;
+      _start_tmstmp = 0;
+    }
+
+    void timer_tick(const size_t& ms_since_last_tick) {
+      _tcpsender_total_alive_time += ms_since_last_tick;
+      if(_tcpsender_total_alive_time - _start_tmstmp > _rto){
+        _is_timeout = true;
+        _is_started = false;
+      }
+    }
+
+    const bool& is_expired(){
+      return _is_timeout;
+    }
+
+    void reset_double_interval(){
+      _rto *= 2;
+    }
+
+    void reset_init_inverval(const unsigned int& initial_rto){
+      _initial_rto = initial_rto;
+      _rto = _initial_rto;
+    }
+
+    //! The difference between restart and start is that restart would keep the doubled timeout interval and it was expected to call when retransmit an unacked seg
+    void restart(){
+      _is_timeout = false;
+      _is_started = true;
+      reset_double_interval();
+      _start_tmstmp = _tcpsender_total_alive_time;
+    }
+
+    bool is_started(){
+      return _is_started;
+    }
+
+};
+
 //! \brief The "sender" part of a TCP implementation.
 
 //! Accepts a ByteStream, divides it up into segments and sends the
@@ -94,87 +175,6 @@ class TCPSender {
     //! \brief relative seqno for the next byte to be sent
     WrappingInt32 next_seqno() const { return wrap(_next_seqno, _isn); }
     //!@}
-};
-
-//! \brief The timer maitained by TCPSender
-
-//! The only job is to maintain the TCP_sender_total_alive_time and the duration since timer started ( start method called ).
-//! It can automatically terminate when timeout
-class RetransmissionTimer{
-  private:
-    unsigned int _initial_rto;
-    unsigned int _rto;
-
-    bool _is_started;
-    bool _is_timeout;
-
-    size_t _tcpsender_total_alive_time;
-    size_t _start_tmstmp;
-
-  public:
-
-    RetransmissionTimer(unsigned int initial_rto)
-    : _initial_rto(initial_rto)
-    , _rto(initial_rto)
-    , _is_started(false)
-    , _is_timeout(false) 
-    , _tcpsender_total_alive_time(0) 
-    , _start_tmstmp(0) {}
-
-    //! This overloading is for Round Trip Time re-evaluation
-    void start(const unsigned int& initial_rto){
-      _is_started = true;
-      _is_timeout = false;
-      reset_init_inverval(initial_rto);
-      _start_tmstmp = _tcpsender_total_alive_time;
-    }
-
-    //! Timer starts when accepting data from upper layer or when accepting ACK
-    void start(){
-      _is_started = true;
-      _is_timeout = false;
-      _rto = _initial_rto;
-      _start_tmstmp = _tcpsender_total_alive_time;
-    }
-
-    void stop(){
-      _is_started = false;
-      _start_tmstmp = 0;
-    }
-
-    void timer_tick(const size_t& ms_since_last_tick) {
-      _tcpsender_total_alive_time += ms_since_last_tick;
-      if(_tcpsender_total_alive_time - _start_tmstmp > _rto){
-        _is_timeout = true;
-        _is_started = false;
-      }
-    }
-
-    const bool& is_expired(){
-      return _is_timeout;
-    }
-
-    void reset_double_interval(){
-      _rto *= 2;
-    }
-
-    void reset_init_inverval(const unsigned int& initial_rto){
-      _initial_rto = initial_rto;
-      _rto = _initial_rto;
-    }
-
-    //! The difference between restart and start is that restart would keep the doubled timeout interval and it was expected to call when retransmit an unacked seg
-    void restart(){
-      _is_timeout = false;
-      _is_started = true;
-      reset_double_interval();
-      _start_tmstmp = _tcpsender_total_alive_time;
-    }
-
-    bool is_started(){
-      return _is_started;
-    }
-
 };
 
 #endif  // SPONGE_LIBSPONGE_TCP_SENDER_HH
