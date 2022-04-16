@@ -119,6 +119,11 @@ void TCPSender::ack_received(const WrappingInt32 ackno, const uint16_t window_si
         return;
     }
 
+    if(ackno.raw_value() > (_first_not_acked + bytes_in_flight()).raw_value()){
+        //Impossible ackno (beyond next seqno) is ignored
+        return;
+    }
+
     while(_first_not_acked.raw_value() < ackno.raw_value()){
         _segments_outstanding.pop();
         if(_segments_outstanding.empty()){
