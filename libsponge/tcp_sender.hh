@@ -118,6 +118,7 @@ class TCPSender {
     WrappingInt32 _first_not_acked;
     size_t _n_consecutive_retrans;
     bool _eof_set;
+    bool _eof_sent;
 
     RetransmissionTimer _timer;
 

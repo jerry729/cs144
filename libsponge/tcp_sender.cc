@@ -25,6 +25,7 @@ TCPSender::TCPSender(const size_t capacity, const uint16_t retx_timeout, const s
     ,  _first_not_acked(0)
     , _n_consecutive_retrans(0)
     , _eof_set(false)
+    , _eof_sent(false)
     , _timer(retx_timeout) {}
 
 uint64_t TCPSender::bytes_in_flight() const {
@@ -77,7 +78,7 @@ void TCPSender::fill_window() {
                 payload_len = _stream.buffer_size();
                 if(payload_len <= TCPConfig::MAX_PAYLOAD_SIZE){
                     header.fin = true;
-                    _eof_set = false;
+                    _eof_sent = true;
                     data = _stream.read(payload_len);
                 }else{
                     data = _stream.read(TCPConfig::MAX_PAYLOAD_SIZE);
@@ -91,8 +92,9 @@ void TCPSender::fill_window() {
         }
         payload = Buffer(move(data));
     }else{
-        if(_eof_set | _stream.eof()){
+        if((_eof_set | _stream.eof()) & (!_eof_sent)){
             header.fin = true;
+            _eof_sent = true;
         }
     }
 
