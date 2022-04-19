@@ -55,9 +55,13 @@ class RetransmissionTimer{
       _start_tmstmp = 0;
     }
 
+    size_t ms_since_last_start(){
+      return _tcpsender_total_alive_time - _start_tmstmp;
+    }
+
     void timer_tick(const size_t& ms_since_last_tick) {
       _tcpsender_total_alive_time += ms_since_last_tick;
-      if(_tcpsender_total_alive_time - _start_tmstmp >= _rto){
+      if(ms_since_last_start() >= _rto){
         _is_timeout = true;
         _is_started = false;
       }
@@ -177,6 +181,8 @@ class TCPSender {
     //! \brief relative seqno for the next byte to be sent
     WrappingInt32 next_seqno() const { return wrap(_next_seqno, _isn); }
     //!@}
+
+    bool eof_sent() const;
 };
 
 #endif  // SPONGE_LIBSPONGE_TCP_SENDER_HH

@@ -4,14 +4,6 @@
 
 #include <random>
 
-// Dummy implementation of a TCP sender
-
-// For Lab 3, please replace with a real implementation that passes the
-// automated checks run by `make check_lab3`.
-
-template <typename... Targs>
-void DUMMY_CODE(Targs &&... /* unused */) {}
-
 using namespace std;
 
 //! \param[in] capacity the capacity of the outgoing byte stream
@@ -174,4 +166,8 @@ void TCPSender::send_empty_segment() {
     seg.header().seqno = next_seqno();
 
     _segments_out.push(seg);
+}
+
+bool TCPSender::eof_sent() const{
+    return _eof_sent;
 }

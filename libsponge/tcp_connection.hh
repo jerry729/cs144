@@ -21,6 +21,10 @@ class TCPConnection {
     //! in case the remote TCPConnection doesn't know we've received its whole stream?
     bool _linger_after_streams_finish{true};
 
+    size_t _ms_since_last_seg_rcved{0};
+    bool _is_active{false};
+    
+
   public:
     //! \name "Input" interface for the writer
     //!@{
@@ -79,6 +83,21 @@ class TCPConnection {
     //! after both streams have finished (e.g. to ACK retransmissions from the peer)
     bool active() const;
     //!@}
+
+    void check_ackno_n_winsize_of_local_rcver();
+
+    void set_tcp_connection_error();
+
+    //! The inbound stream has been fully assembled and has ended.
+    bool is_clean_shutdown_prereq1_satisfied() const;
+
+    //! The outbound stream has been ended by the local application and fully sent (including the fact that it ended, i.e. a segment with fin ) to the remote peer
+    bool is_clean_shutdown_prereq2_satisfied() const;
+
+    //! The outbound stream has been fully acknowledged by the remote peer
+    bool is_clean_shutdown_prereq3_satisfied() const;
+
+    void send_empty_seg_with_rst(bool reset);
 
     //! Construct a new connection from a configuration
     explicit TCPConnection(const TCPConfig &cfg) : _cfg{cfg} {}
