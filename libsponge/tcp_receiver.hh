@@ -24,6 +24,7 @@ class TCPReceiver {
     std::optional<WrappingInt32> _ack;
     bool _fin_rcved;
     bool _syn_rcved;
+    bool _bad_ack{false};
 
   public:
     //! \brief Construct a TCP receiver
@@ -67,6 +68,8 @@ class TCPReceiver {
 
     //! \brief handle an inbound segment
     void segment_received(const TCPSegment &seg);
+
+    bool& bad_ack() { return _bad_ack; }
 
     //! \name "Output" interface for the reader
     //!@{

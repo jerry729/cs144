@@ -69,6 +69,8 @@ class StreamReassembler {
     size_t last_assembled_index() const { return _expected_index == 0 ? 0 : _expected_index - 1; }
 
     size_t& expected_index() { return _expected_index; }
+
+    bool is_eof() const { return _eof; }
 };
 
 #endif  // SPONGE_LIBSPONGE_STREAM_REASSEMBLER_HH

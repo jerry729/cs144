@@ -35,7 +35,13 @@ void TCPReceiver::segment_received(const TCPSegment &seg) {
 
     string pl = seg.payload().copy();
     uint64_t tmp = unwrap(header.seqno, *_isn, _reassembler.expected_index());
-    tmp = header.syn ? tmp : tmp - 1;
+
+    if(tmp == 0 && (!header.syn)){
+        _bad_ack = true;
+        return;
+    }
+
+    tmp = (header.syn || tmp == 0) ? tmp : tmp - 1;
     //printf("++%d++ tmp:%lu isn:%u seq:%u\n",++tst_i, tmp, _isn -> raw_value(), header.seqno.raw_value());
     
     //printf("++%d++ ack:%u\n",++tst_i, _ack->raw_value());

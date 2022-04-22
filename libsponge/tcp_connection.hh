@@ -22,7 +22,7 @@ class TCPConnection {
     bool _linger_after_streams_finish{true};
 
     size_t _ms_since_last_seg_rcved{0};
-    bool _is_active{false};
+    bool _is_active{true};
     
 
   public:
@@ -98,6 +98,8 @@ class TCPConnection {
     bool is_clean_shutdown_prereq3_satisfied() const;
 
     void send_empty_seg_with_rst(bool reset);
+
+    void send_ack_for_syn();
 
     //! Construct a new connection from a configuration
     explicit TCPConnection(const TCPConfig &cfg) : _cfg{cfg} {}

@@ -36,7 +36,67 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
         return;
     }
     _receiver.segment_received(seg);
+    _sender.ack_received(hd.ackno, hd.win);
     check_ackno_n_winsize_of_local_rcver();
+
+    // If the incoming segment occupied any sequence numbers, the TCPConnection makes sure that at least one segment is sent in reply, to reflect an update in the ackno and window size.
+    if(seg.header().syn){
+        send_ack_for_syn();
+        _is_active = true;
+        return;
+    }
+
+    // bad ack - early seg out
+    if(_receiver.ackno().has_value()
+    && _receiver.bad_ack()
+    && hd.seqno == _receiver.ackno().value() - 1){
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        _receiver.bad_ack() = false;
+        return;
+    }
+
+    // bad ack - late seg out
+    if(_receiver.ackno().has_value()
+    && hd.seqno.raw_value() >= (_receiver.ackno().value() + _receiver.window_size()).raw_value()){
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
+    }
+
+    // bad ack
+    if(_receiver.ackno().has_value()
+    && hd.seqno.raw_value() == (_receiver.ackno().value() - 1).raw_value()){
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
+    }
+
+    //linger end
+    if(seg.header().fin 
+    && _sender.eof_sent() 
+    && _receiver.ackno().has_value()
+    && hd.seqno == _receiver.ackno().value() - 1){
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
+    }
+
+    //passive close
+    if(seg.header().fin 
+    && (!_sender.eof_sent()) 
+    && (!_sender.stream_in().eof())
+    && _receiver.ackno().has_value()
+    && hd.seqno == _receiver.ackno().value() - 1){
+        _linger_after_streams_finish = false;
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
+    }
+
+    //segment out of the window
+    
+    // Keep-alive seg  
     if(_receiver.ackno().has_value() 
     && seg.length_in_sequence_space() == 0 
     && hd.seqno == _receiver.ackno().value() - 1){
@@ -134,6 +194,15 @@ void TCPConnection::send_empty_seg_with_rst(bool reset) {
         seg.header().seqno = _sender.next_seqno();
         _segments_out.push(seg);
     }
+}
+
+void TCPConnection::send_ack_for_syn(){
+    TCPSegment seg{};
+    seg.header().seqno = _sender.next_seqno();
+    seg.header().ack = true;
+    seg.header().ackno = _receiver.ackno().value();
+    seg.header().win = _receiver.window_size();
+    _segments_out.push(seg);
 }
 
 TCPConnection::~TCPConnection() {
