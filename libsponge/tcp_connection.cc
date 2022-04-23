@@ -143,6 +143,14 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
         check_ackno_n_winsize_of_local_rcver();
         return;
     }
+
+    if(_receiver.ackno().has_value()
+    && seg.length_in_sequence_space() != 0
+    && (!hd.syn) && (!hd.fin)){
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
+    }
 }
 
 bool TCPConnection::active() const {
