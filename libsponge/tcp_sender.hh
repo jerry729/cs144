@@ -123,6 +123,7 @@ class TCPSender {
     size_t _n_consecutive_retrans;
     bool _eof_set;
     bool _eof_sent;
+    bool _syn_sent{false};
 
     RetransmissionTimer _timer;
 
@@ -183,6 +184,7 @@ class TCPSender {
     //!@}
 
     bool eof_sent() const;
+    bool& syn_sent() {return _syn_sent;}
 };
 
 #endif  // SPONGE_LIBSPONGE_TCP_SENDER_HH

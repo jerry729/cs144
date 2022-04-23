@@ -40,9 +40,19 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
     check_ackno_n_winsize_of_local_rcver();
 
     // If the incoming segment occupied any sequence numbers, the TCPConnection makes sure that at least one segment is sent in reply, to reflect an update in the ackno and window size.
-    if(seg.header().syn){
+    if(seg.header().syn
+    && _sender.syn_sent()){
         send_ack_for_syn();
         _is_active = true;
+        return;
+    }
+
+    if(seg.header().syn
+    && (!_sender.syn_sent())){
+        _sender.fill_window();
+        _is_active = true;
+        _sender.syn_sent() = true;
+        check_ackno_n_winsize_of_local_rcver();
         return;
     }
 
@@ -58,7 +68,16 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
 
     // bad ack - late seg out
     if(_receiver.ackno().has_value()
-    && hd.seqno.raw_value() >= (_receiver.ackno().value() + _receiver.window_size()).raw_value()){
+    && hd.seqno.raw_value() >= (_receiver.ackno().value() + _receiver.window_size()).raw_value()
+    && (!(_receiver.window_size() == 0))){
+        printf("%u %u \n",  hd.seqno.raw_value(), (_receiver.ackno().value() + _receiver.window_size()).raw_value());
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
+    }else if(_receiver.ackno().has_value()
+    && hd.seqno.raw_value() > _receiver.ackno().value().raw_value()
+    && hd.seqno.raw_value() < (_receiver.ackno().value() + _receiver.window_size()).raw_value()
+    && (!hd.fin)){
         _sender.send_empty_segment();
         check_ackno_n_winsize_of_local_rcver();
         return;
@@ -66,7 +85,8 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
 
     // bad ack
     if(_receiver.ackno().has_value()
-    && hd.seqno.raw_value() == (_receiver.ackno().value() - 1).raw_value()){
+    && hd.seqno.raw_value() == (_receiver.ackno().value() - 1).raw_value()
+    && (!hd.fin)){
         _sender.send_empty_segment();
         check_ackno_n_winsize_of_local_rcver();
         return;
@@ -102,6 +122,16 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
     && hd.seqno == _receiver.ackno().value() - 1){
         _sender.send_empty_segment();
         check_ackno_n_winsize_of_local_rcver();
+        return;
+    }
+
+    if(_receiver.ackno().has_value()
+    && seg.length_in_sequence_space() != 0
+    && (!hd.syn) && (!hd.fin)
+    && (hd.seqno + seg.length_in_sequence_space()).raw_value() == _receiver.ackno().value().raw_value()){
+        _sender.send_empty_segment();
+        check_ackno_n_winsize_of_local_rcver();
+        return;
     }
 }
 
@@ -120,15 +150,17 @@ size_t TCPConnection::write(const string &data) {
 void TCPConnection::tick(const size_t ms_since_last_tick) {
     _sender.tick(ms_since_last_tick);
     _ms_since_last_seg_rcved += ms_since_last_tick;
-    check_ackno_n_winsize_of_local_rcver();
+    
     if(_sender.consecutive_retransmissions() > TCPConfig::MAX_RETX_ATTEMPTS){
         send_empty_seg_with_rst(true);
         set_tcp_connection_error();
         return;
     }
+    
     if((!_sender.eof_sent()) && _receiver.stream_out().eof()){
         _linger_after_streams_finish = false;
     }
+
     if(is_clean_shutdown_prereq1_satisfied()
     && is_clean_shutdown_prereq2_satisfied()
     && is_clean_shutdown_prereq3_satisfied()){
@@ -140,6 +172,8 @@ void TCPConnection::tick(const size_t ms_since_last_tick) {
             }
         }
     }
+
+    check_ackno_n_winsize_of_local_rcver();
 }
 
 void TCPConnection::end_input_stream() {

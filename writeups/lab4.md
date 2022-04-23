@@ -37,3 +37,9 @@ And then seeing them in a role-swap way, reverse the local and remote peer.
 As it marks in red, and the right now local peer doesn't know if the last ack it sent rcved by the remote peer. So the prereq \#1 and \#2 and \#3 are satisfied but for \#4 it has to linger.
 
 [![LwnSlq.png](https://s1.ax1x.com/2022/04/18/LwnSlq.png)](https://imgtu.com/i/LwnSlq)
+
+
+## loopback
+local sender sends a group of segments by calling fill_window() where there is a loop in the function, so it will really fill the window using the bytes in the stream, that is sending out segment as it can.
+
+Then local receiver received the segs and pass the ackno to the sender and let sender make ack segments. **These ack segments are entirely behind the above data segments in the queue,** since they are using the same sender.

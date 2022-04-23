@@ -52,6 +52,7 @@ void TCPSender::fill_window() {
         if(next_seqno() == _isn){
             // is syn byte in this seg?
             header.syn = true;
+            _syn_sent = true;
             payload_len -= 1;
         }
 
