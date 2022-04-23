@@ -1,0 +1,967 @@
+        Action:      packet arrives: Header(flags=A,seqno=2495597478,ack=2495590796,win=65000) with 1000 data bytes "I<233><157>(<153>y<211><183><24>m<222><172>3)<191>l..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495651617,ack=2495590796,win=65000) with 1000 data bytes "7<180><246><219><23>=<129>zB<6><152><147>r<20>f<142>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495595299,ack=2495590796,win=65000) with 1000 data bytes "=<146><214><6><6><202><217>h<131><205><160><245>~$9e..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495612125,ack=2495590796,win=65000) with 1000 data bytes "<176><31><131>7<250><175><140>rH<133><20><215><224><160>h;..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495606324,ack=2495590796,win=65000) with 303 data bytes "`<190><255><235><167>b<136><251><243><151><251><143>,<13><202>M..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495600830,ack=2495590796,win=65000) with 1000 data bytes "<150>><28>;6<139><158>eoP8<228>><153><140><255>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495611125,ack=2495590796,win=65000) with 1000 data bytes "z)aW<167><157>EM<25><140><186><136><134>iY<181>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495603830,ack=2495590796,win=65000) with 1000 data bytes "EN<232><216><218>9e<161>`<238><138><187>_'1<150>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495621747,ack=2495590796,win=65000) with 1000 data bytes "<225><135><220><163><194>| <1><158><254>fW<171><186>lY..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495644629,ack=2495590796,win=65000) with 1000 data bytes "Gn<253><129><<130><215><148>j<151><151><4><182><20><206><184>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495642629,ack=2495590796,win=65000) with 1000 data bytes "<240><187><189><247><162><179>t<251>l<171>]=<224>$$<222>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495629293,ack=2495590796,win=65000) with 524 data bytes "<171><30>9]<155>AP?<14><187><171><141><180><161>2<245>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495594299,ack=2495590796,win=65000) with 1000 data bytes "<15>Bl<239><185><204><242>0<3><15><230>D<169>U<165>...."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495652617,ack=2495590796,win=65000) with 243 data bytes "<207><147><155><166><221><24><174>-<31><155>d<143><170>[<18><164>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495623968,ack=2495590796,win=65000) with 325 data bytes "<141>!<188><141><16>D<218>;<254><1>1<23>=<244><193><188>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495614125,ack=2495590796,win=65000) with 1000 data bytes "<184><164><157><136><232><152>K<6>Yu<151><171>h1~<23>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495605324,ack=2495590796,win=65000) with 1000 data bytes "<173><29>T<21><22>V<23><159><217><209><142><20><171><5><25><161>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495609627,ack=2495590796,win=65000) with 498 data bytes "-<193>rr6<239>#Do<226><190>Yo<242><23><208>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495626293,ack=2495590796,win=65000) with 1000 data bytes "`<202><4><169><202><192><132><182><153><223>R<155><0>e<18><196>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495617747,ack=2495590796,win=65000) with 1000 data bytes "<146>g<26>]"iV2<143>g9L^<24>L4..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495639629,ack=2495590796,win=65000) with 1000 data bytes "+<148><15><242>uB<194><211>6K<221>Mw<222><253>7..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495630817,ack=2495590796,win=65000) with 946 data bytes "<218><17><172><237><161><245>.6<131>F}<10>-<230><28><138>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495655271,ack=2495590796,win=65000) with 525 data bytes "S<254>n<230> <177><186><240><178><233><194><181><24><24>%<255>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495622853,ack=2495590796,win=65000) with 931 data bytes "1<159><238>7<<206><197><15><199><209><135>Uo<20><204><146>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495638763,ack=2495590796,win=65000) with 866 data bytes "<176><197><29><170><231><174>MDI<196><255><171><128><20><179><175>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495593070,ack=2495590796,win=65000) with 1000 data bytes "<191>,<197><168>[<244>b<28>k<223>4<170><25><160><11><253>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495616125,ack=2495590796,win=65000) with 622 data bytes "<199><190><221><178><237><214><16>7<184>p<187>Q[g<239>b..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495615125,ack=2495590796,win=65000) with 1000 data bytes "a<186><147>p^<160><254>K<136><235><233><201><229><132><16><20>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495604830,ack=2495590796,win=65000) with 494 data bytes "<12><20>'<244><242>/<12><127>nVK<137>m<163><208>o..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495629817,ack=2495590796,win=65000) with 1000 data bytes "<217><2>wI<202><160>3w<<141><200>k4^0<201>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495634763,ack=2495590796,win=65000) with 1000 data bytes "<239>*z<220>Zm<224><247>hj<164>Rx<139>%<238>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495643629,ack=2495590796,win=65000) with 1000 data bytes "<156>z3+<23>1<160>Q<129><136><5><206><151><16><179><8>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495619747,ack=2495590796,win=65000) with 1000 data bytes "<246><137>X\<230>r<221><25><210>N<175>><141><149><30>N..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495645629,ack=2495590796,win=65000) with 988 data bytes "<203>a<219><137><130>vz<246><133>h<129>Tk^<28><12>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495591796,ack=2495590796,win=65000) with 274 data bytes "<219><22><164>=<7><168><9><30><131><150><141><9><202>M<147>N..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495613125,ack=2495590796,win=65000) with 1000 data bytes "<183>>a<243> m<21>E|C<142><0><179><238><168>+..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495625293,ack=2495590796,win=65000) with 1000 data bytes "<204><193><237>W<20><140>zL<233>L<181><249><31><237>K<161>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495618747,ack=2495590796,win=65000) with 1000 data bytes "<19><4><153><208><215>m<154><31>:<174>2<154><31><8>^<244>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495628293,ack=2495590796,win=65000) with 1000 data bytes "<248>|<29>$p<180>5<207><246>m<201>a<185><214><136><177>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495616747,ack=2495590796,win=65000) with 1000 data bytes "<31>)<239>V<224>O<17>(B<206>]<23><21>g><31>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495598478,ack=2495590796,win=65000) with 1000 data bytes "7x<168><230><175><205>(<10>;<215><190><250><185><227><184>&..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495633763,ack=2495590796,win=65000) with 1000 data bytes "<192>[<2>_<200><233><131><190><183><158><203><10>f<251><236><215>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495623784,ack=2495590796,win=65000) with 184 data bytes "y<240><249><227>?T<143><178><254><193>h<165><231><208>%<155>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495602830,ack=2495590796,win=65000) with 1000 data bytes "<183><240>}$k<232><20>}<193>N<200><233>S\<239>^..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495653860,ack=2495590796,win=65000) with 411 data bytes "<153>H<2>f9<211><230><155><233>j<208><30>PvG<145>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495620747,ack=2495590796,win=65000) with 1000 data bytes "9<15>3C<225>D<169><149><23>0<147>V<252><215>v<161>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495631763,ack=2495590796,win=65000) with 1000 data bytes "<194><184>:<162>M<246>3k<235>A<204><165><228><190><221><227>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495599478,ack=2495590796,win=65000) with 1000 data bytes "<217><210>~<177>A&N<151><20>#&Xw<11><194><158>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495607627,ack=2495590796,win=65000) with 1000 data bytes "<255><147>f<3><4><192>y_<224>" np<206>F<164>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495647617,ack=2495590796,win=65000) with 1000 data bytes "<188>:<249>|<252><14><184>ZP<248><222><189><236><7><31><185>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=2495590796,ack=2495590796,win=65000) with 1000 data bytes "<190>R<167><130>A<237><134><218>|A7<171><205><246><229><213>..."
+        Action:      1ms pass
+74 50
+
+
+
+
+
+
+        
+        Action:      packet arrives: Header(flags=A,seqno=1551688753,ack=1551665258,win=65000) with 1000 data bytes "<195><255>+X<199><7><172><195><133><210><134>N<247>><181><172>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551669258,ack=1551665258,win=65000) with 1000 data bytes ":<190><209><229><31>"N<142><226><194><227><197>Px<211><164>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551704741,ack=1551665258,win=65000) with 1000 data bytes "<138>'>{4<249>\<202><253><147><138><199>O <133><190>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551699741,ack=1551665258,win=65000) with 1000 data bytes "`?<22><165><235>a<28><135>1+<187>&<4><138><155><134>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551706472,ack=1551665258,win=65000) with 1000 data bytes "N<1><241>aK<218><150><183>D<131><128><248><214><5><240>~..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551703741,ack=1551665258,win=65000) with 1000 data bytes "<207><214><254><29>Q<27><200>+6<248><160>Q<178><156><7><142>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551692107,ack=1551665258,win=65000) with 1000 data bytes "<167><145><145><198><193><241><174><167><214>NV<247><253><149>(<211>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551694107,ack=1551665258,win=65000) with 1000 data bytes "*<169><7>ej<2>Fn<14><214><10><231>mJ<248><140>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551696045,ack=1551665258,win=65000) with 687 data bytes "<225>.Q<128><23><226><222><157><216><173><161><22><238>?<218><141>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551723214,ack=1551665258,win=65000) with 1000 data bytes "<2>ns<28><182><168>Xl<2>R<240>)x<138>a1..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551696732,ack=1551665258,win=65000) with 1000 data bytes "<198><209><136><236>j. <16><233><143>g,<177><157><195>2..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551711437,ack=1551665258,win=65000) with 1000 data bytes "<12>p<131><8>[<232><3><157>$x$T<154><181>u<219>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551668258,ack=1551665258,win=65000) with 1000 data bytes "<184>v<234>9<246>"<1><128><176>;Q<167>e<23>fI..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551675752,ack=1551665258,win=65000) with 1000 data bytes "<10>/<230><158><152><247><14><206><195><240>%<208><181><248><196>>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551698399,ack=1551665258,win=65000) with 342 data bytes "<129>%2<128><231><250><6<26>p<136><153>4<232><130>,..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551667258,ack=1551665258,win=65000) with 1000 data bytes "L<198>%#<166><17><190>n<159>><BL<27><169><142>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551725214,ack=1551665258,win=65000) with 949 data bytes "J<2>vw<226><127>&F<183><1>>@kl<20><200>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551716655,ack=1551665258,win=65000) with 1000 data bytes "K<3><159><15><7><215><195>/<179>I<134>b<20>gG<..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551695107,ack=1551665258,win=65000) with 938 data bytes "<22>xz<195>B%<175><253><2>V<199><13><157><245><228><171>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551707472,ack=1551665258,win=65000) with 1000 data bytes "<2><17><152><<220><20><7><245><132>a$<185><212><254>R<243>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551680752,ack=1551665258,win=65000) with 957 data bytes "<180><160><171>A<158><218><23><206><139><235><208><196>Q<9><241><165>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551676752,ack=1551665258,win=65000) with 1000 data bytes "c<217><215><131><134><9><13><27><197><247><27><199>m<135>$<193>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551714655,ack=1551665258,win=65000) with 1000 data bytes "g<228><130>49<164>+<139><150><219>m<182>?l<253><183>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551722214,ack=1551665258,win=65000) with 1000 data bytes "j<178>+<141>"<182><184><212>;<244><157><21><130>7<242><215>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551713437,ack=1551665258,win=65000) with 1000 data bytes "F<179>#<170>X>*<177><254><181>04<207>h<242><15>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551724214,ack=1551665258,win=65000) with 1000 data bytes "~<149><253><201><6>&N8m<6>v<151><235>EY<150>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551671471,ack=1551665258,win=65000) with 1000 data bytes "<220><20>E<134><175><215>M+Q<1><129>d<200><239>"<252>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551674752,ack=1551665258,win=65000) with 1000 data bytes "<188>0<158>f<182>P<20>|P.<129><213><30><145><193><173>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551709472,ack=1551665258,win=65000) with 1000 data bytes "7o<<227><21>4<137>YSZ<236><245><252><197><162>r..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551673752,ack=1551665258,win=65000) with 1000 data bytes "<173><140><144>v;|<135>En<216><135><154><132>c&x..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551679752,ack=1551665258,win=65000) with 1000 data bytes "?ba<223><16><127><127><138>P<151>(<145><139><232> <148>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551682709,ack=1551665258,win=65000) with 1000 data bytes "<152><198>j<199>M<245><141><181>{<245><228><1><13><172><155><151>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551702741,ack=1551665258,win=65000) with 1000 data bytes "<245><3>\<193><144><165><170>9<25><16>#<2><199><226><249><216>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551665258,ack=1551665258,win=65000) with 1000 data bytes "+<230><8><130><241><187><234>sN<195><142><242><25><148>g<213>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551686753,ack=1551665258,win=65000) with 1000 data bytes "<161><135><229><14><184><154><144>r<155><27><138><189><198>I<187><171>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551681709,ack=1551665258,win=65000) with 1000 data bytes "<249><<189><176><236>`<239><255><201>bS<198><243><177><172>A..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551701741,ack=1551665258,win=65000) with 1000 data bytes "<139><236>[<153><183>G<24>\*):<152><168><172>@<212>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551720655,ack=1551665258,win=65000) with 559 data bytes "Q%<229><225><211><157><22><212><239><11><184><1><238>*[<7>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551721214,ack=1551665258,win=65000) with 1000 data bytes "<248><251><236><11><217><201>4<215>=<244><16>X<131>ewL..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551718655,ack=1551665258,win=65000) with 1000 data bytes "<250><18><30><213><25>p&<222><8>\n<153>f<238><231><233>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551677752,ack=1551665258,win=65000) with 1000 data bytes "<179><172>[<210><16>K]<157><158><17>]<137><218><226>A<238>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551727163,ack=1551665258,win=65000) with 1000 data bytes "<225><203>*<16><3>3k<172><180><196><159><149>l<19>W<132>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551673471,ack=1551665258,win=65000) with 281 data bytes "3a<19>`<166>wX<237>M<21><174>Ft<230><5><192>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551708472,ack=1551665258,win=65000) with 1000 data bytes "t<238><25><181><131>8;<<12><249><137><222><251>)ya..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551715655,ack=1551665258,win=65000) with 1000 data bytes "<164><127>0<205> <31><145><234>XS<147>S<231>LL<..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551683709,ack=1551665258,win=65000) with 1000 data bytes "/3<138><195><3><139><197><251>rk<135><141><158><201><252><255>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551712437,ack=1551665258,win=65000) with 1000 data bytes "<235><144><141><158><144><127><228><188><132><157><13><145>$<191>n<192>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551714437,ack=1551665258,win=65000) with 218 data bytes "<170><191>^VI<183><208><196>><228>.M<134><215><199><29>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551729433,ack=1551665258,win=65000) with 825 data bytes "5<10><205>Q<170>,<198>;:7<30><137><229>$<136><172>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551691107,ack=1551665258,win=65000) with 1000 data bytes "<186><186>T<248>~L<196><197>=<29><162>a<224><140><156><167>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551684753,ack=1551665258,win=65000) with 1000 data bytes "<225><250><246><212><214>!<233>+&><141><135>htA<157>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551693107,ack=1551665258,win=65000) with 1000 data bytes "<6><252>_<171>#j<146>S<224>v<246>k<192><170><189>c..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551687753,ack=1551665258,win=65000) with 1000 data bytes "<210><9>~l<3><156>PY5!<144><132><168>VC<137>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551689753,ack=1551665258,win=65000) with 794 data bytes "pp$<250>e/<215>E5<209><221><:<158><219><148>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551690547,ack=1551665258,win=65000) with 560 data bytes "<230><143><180><197><144><240><182><142>`*9<252>|<205>}<224>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551670258,ack=1551665258,win=65000) with 976 data bytes "<31><177>D<188><149><183>)Y-<24>V<253>M=<8><184>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551728433,ack=1551665258,win=65000) with 1000 data bytes "Z<227><185><157><193><203><144>X<128><182><27>xq]09..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551678752,ack=1551665258,win=65000) with 1000 data bytes "<198><189>q@1<191>E<20><128><194><18><247><131>G<207><3>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551710472,ack=1551665258,win=65000) with 965 data bytes "<129><24><15>eN<170>K<223><164><236>A.Q$<253>*..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551698741,ack=1551665258,win=65000) with 1000 data bytes "<18>H<208>b<134>S<187>+}y<150>Tu<132>uZ..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551697732,ack=1551665258,win=65000) with 667 data bytes "~<242><228><187>H<172><217><13><156>k<206><7><253><14>JL..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551671234,ack=1551665258,win=65000) with 237 data bytes "<175><228>r~<249><251>4<239><184>$<133><136><221><26>!e..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551719655,ack=1551665258,win=65000) with 1000 data bytes "b<127><142><13><197><212><28><24>4r<208><194><162>+<135><233>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551672471,ack=1551665258,win=65000) with 1000 data bytes "M{nv<173><234><143>T<25><128>v<252><226><139>0<197>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551717655,ack=1551665258,win=65000) with 1000 data bytes "<193>p<177>]<228>a<173>a<137><128><151><139><211><205>f!..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551684709,ack=1551665258,win=65000) with 44 data bytes "U<172><252><201><185><157><231><22>d6<14><179>3B,k..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551705741,ack=1551665258,win=65000) with 731 data bytes ".CWv<15>?<3>9<9><12>;<255>\<172>]<233>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551728163,ack=1551665258,win=65000) with 270 data bytes "<238><30><250><222><170><<241><21>.Uu<197><245><169><192><30>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1551666258,ack=1551665258,win=65000) with 1000 data bytes "k<165><195>+<168>b<13><233><4><23>I<194><236>Q<219><146>..."
+        Action:      1ms pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Action:      packet arrives: Header(flags=A,seqno=1080650756,ack=1080641138,win=65000) with 1000 data bytes "<171>X8<254><218><222>F<155>r<197>b%<129><147>h]..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080676202,ack=1080641138,win=65000) with 1000 data bytes "[-a6<231><154><134>9I]<217>4<144><177><31><..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080675202,ack=1080641138,win=65000) with 1000 data bytes "<227>U%m<163>N<136>b<196><13><3><235>q{<190><226>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080682152,ack=1080641138,win=65000) with 1000 data bytes "2<6>r<139>_{<12>T<158><199>TMQNpl..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080685152,ack=1080641138,win=65000) with 1000 data bytes "#<189>\<163>%<157><228><142><193>Z<234><3><23><195>:<27>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080674202,ack=1080641138,win=65000) with 1000 data bytes "<216>u<234><242><251>o<164><154>?<217><159>G<195><188><165>$..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080669434,ack=1080641138,win=65000) with 1000 data bytes "<176><165><217><199><12><242><176><10><130>'d<137><242><6>:<7>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080667434,ack=1080641138,win=65000) with 1000 data bytes "><243><6>F<128>~<255>J<224><186><174>y<127>_K<21>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080654261,ack=1080641138,win=65000) with 1000 data bytes "<254><189><15>@<246><4><192>+<29>7<178><133><<183><25><196>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080659802,ack=1080641138,win=65000) with 1000 data bytes "w<230><31> <168>V<132><148>7<142><210><217><209><181><150><237>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080702681,ack=1080641138,win=65000) with 1000 data bytes "<188><150><235>0i<154><253>S<189><192><148><226>N?<234><172>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080665989,ack=1080641138,win=65000) with 1000 data bytes "<184><137>(<209><234><197><187><206><29><171><168><244>'<15><201><173>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080657802,ack=1080641138,win=65000) with 1000 data bytes "<249>599f<152>/"=<19><167><5><246>|c<0>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080697707,ack=1080641138,win=65000) with 922 data bytes "<218><247>e<169>b<163><12> <252><8>8<28><186>X"Q..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080701629,ack=1080641138,win=65000) with 52 data bytes "<232><212><203><9><211><219>"<241><13><238>O<144><181><233><192><194>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080660802,ack=1080641138,win=65000) with 1000 data bytes "<9>@#<31><222><198><153>!./\h<8><225><240><243>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080696156,ack=1080641138,win=65000) with 551 data bytes "<179>X<158><146><146><28><208>A<150><13><131><150><184><129><213>)..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080692156,ack=1080641138,win=65000) with 1000 data bytes "<172><193>X<127><0><10><29><199><240>;(<235><165><11><213><176>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080658802,ack=1080641138,win=65000) with 1000 data bytes "<147><135><129><155>M<236><225><213>=<158>.5q<16><227><140>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080683152,ack=1080641138,win=65000) with 1000 data bytes "1<30><178><244>0&<254><166><197>k<136>Z<229><181><0><152>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080687986,ack=1080641138,win=65000) with 1000 data bytes "<163>d<243><16><22><213><183>*<235><15><169><160>&<150><5><157>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080687152,ack=1080641138,win=65000) with 834 data bytes "<9><235><0>w<210>L2F<@`<171><166><181><247><246>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080701681,ack=1080641138,win=65000) with 1000 data bytes "<164><237>@m)#5<198><239><254><143>X:<198><174><193>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080666989,ack=1080641138,win=65000) with 445 data bytes "<184><186><12>5 <219><172><183><7><233><140>o<6><5>z<13>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080651756,ack=1080641138,win=65000) with 1000 data bytes "<188><237><174>_<11><235><12><28><150>l=<142><150><142><240><130>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080694156,ack=1080641138,win=65000) with 1000 data bytes "5$<137>;<234><230>o<144><137>ew=q<25><175><222>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080690156,ack=1080641138,win=65000) with 1000 data bytes "i!7b<239><235><135>j<30><135><186><167>P}<135>r..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080644138,ack=1080641138,win=65000) with 1000 data bytes ",,c(f<174><133>S<160><6>4Q8<173><188>C..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080671434,ack=1080641138,win=65000) with 1000 data bytes "<4><144>&:<229><208><243><159><28><210><222><185><24><129><9>Y..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080664802,ack=1080641138,win=65000) with 187 data bytes "`<165>q<228><177><235>*T)<147><168>5<26><226><7><29>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080649756,ack=1080641138,win=65000) with 1000 data bytes "<195><18><228><7><5><226>R<19><182><174><148><24><184>:<211><194>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080705681,ack=1080641138,win=65000) with 457 data bytes "<31><255><144>}z*P<183>z<165>W<222><194>Z<214><20>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080698629,ack=1080641138,win=65000) with 1000 data bytes "<248><211><6><7>J<199><146>U<205>y[3<248><127>s]..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080691156,ack=1080641138,win=65000) with 1000 data bytes "<134>mb*<242><224>Y<173><130><174>K<241><221>pQ4..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080652756,ack=1080641138,win=65000) with 505 data bytes "<200><158><198>tk"?<192><188><241><134><173><235><156><27>_..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080673434,ack=1080641138,win=65000) with 768 data bytes "<229><27>m<154><224>6<132><174><190>@<232><18><202>XQ<190>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080646756,ack=1080641138,win=65000) with 1000 data bytes "<156>;<193>l"-j<223><174><201><196><20><188>M<223><241>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080661802,ack=1080641138,win=65000) with 1000 data bytes "<144>Q<233><133><221><219><215><177><31><178>C<13><254><179>yD..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080670434,ack=1080641138,win=65000) with 1000 data bytes "<174><20><191><215><151><210><184>}<216><219><129><169>p<244><135><156>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080662802,ack=1080641138,win=65000) with 1000 data bytes "<127><28><237><164><15>s<242><12><173><205>a<248><214><223><210>F..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080679202,ack=1080641138,win=65000) with 950 data bytes "<14>,<151><216><:<159>MM<214><216><145><144>FT<161>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080678202,ack=1080641138,win=65000) with 1000 data bytes "[p<221><200><164>?<186><193><153>l<4><139><171><163>JS..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080681152,ack=1080641138,win=65000) with 1000 data bytes "H<212><226>n<183><238><4><211><196>~<252><142><166><157><222><4>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080677202,ack=1080641138,win=65000) with 1000 data bytes "<2>g=d7E<148><230>.a<233>P<181>M<3><194>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080646138,ack=1080641138,win=65000) with 618 data bytes "<148><16><26>5<146><214>d<143><231>W<172><179><242><165>5y..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080657261,ack=1080641138,win=65000) with 541 data bytes "<239><158><194><240>,<139>;7<249><233>;x<240><221>k<4>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080653261,ack=1080641138,win=65000) with 1000 data bytes "<13><246><130><224><19><5>8<172><173><222>TD<195><205>6$..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080668434,ack=1080641138,win=65000) with 1000 data bytes "<18><3><164><0>V5(<244><15>V<252><243><159><155><160><137>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080672434,ack=1080641138,win=65000) with 1000 data bytes ")]`<7>}Z<255><181><161>O!E~<239><149><19>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080696707,ack=1080641138,win=65000) with 1000 data bytes "!<23><12><4><20>6<11>L<241>>9<131><160><215>yl..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080704681,ack=1080641138,win=65000) with 1000 data bytes "<199>/<220><185><248><31><17><28><20><225><25>g<244>b<162><187>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080641138,ack=1080641138,win=65000) with 1000 data bytes "<222><177>]|`AG<202><167><187>y<154>z<210><163><235>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080689156,ack=1080641138,win=65000) with 1000 data bytes "<22><253><183><22><167><133><127><172>L{<7><220>[<1><147><236>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080700629,ack=1080641138,win=65000) with 1000 data bytes "t<142><223>?<20>(<221>pv<189><156><213><135><12><199>E..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080695156,ack=1080641138,win=65000) with 1000 data bytes "<252><135><185><162><160><216>t<27><12><162><191><157><238>`W<165>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080680152,ack=1080641138,win=65000) with 1000 data bytes "<242><247>JM<253>2<134>L<182>=}lL<200><11>O..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080642138,ack=1080641138,win=65000) with 1000 data bytes "T<223><138><227><181>]/<3><148><158>><189>N<252><248>...."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080688986,ack=1080641138,win=65000) with 170 data bytes "[<26><211>p<137><151><12><164>l<248>*f<138><136>x<..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080699629,ack=1080641138,win=65000) with 1000 data bytes "^<232>Me<167><22><210><S<28><237>q<140><182><232><207>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080686152,ack=1080641138,win=65000) with 1000 data bytes "-<229>|<210>SR<141><1><178><153>nr<16><148><188><25>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080645138,ack=1080641138,win=65000) with 1000 data bytes "?&<131><194>=<10>.<254><146><224><198><212>s<252>C<176>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080664989,ack=1080641138,win=65000) with 1000 data bytes "<14><152><168><193><193><184><20>V<130><203><182><162>d<237><231><225>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080703681,ack=1080641138,win=65000) with 1000 data bytes "Y$A<228><245><28>0<129><239>z<6><136><136><168>=<248>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=1080643138,ack=1080641138,win=65000) with 1000 data bytes "c<152><138><208>R<200>{m<178><2>(<224><193><145><154>4..."
+        Action:      1ms pass
+70 63
+
+
+
+
+
+        Action:      packet arrives: Header(flags=A,seqno=3282565232,ack=3282518687,win=65000) with 72 data bytes "?<22><201><2>3<129>0\<222><154>u<221><3>2<250><136>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282582189,ack=3282518687,win=65000) with 1000 data bytes "|<162>[<137>s<206><194><182><163><227>{<156><238>!V<16>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282568304,ack=3282518687,win=65000) with 1000 data bytes "D<252><173>8<164><189><237>'K<159>SJ<249>I>"..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282532794,ack=3282518687,win=65000) with 1000 data bytes "H<9><197><10><222><22>6<220><131><147><138><175>R<198>e<18>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282569304,ack=3282518687,win=65000) with 1000 data bytes "F&<1>k<160>L51<185> <184>@<172> v<205>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282565304,ack=3282518687,win=65000) with 1000 data bytes "U<153><158><172>M!<137><24>K<227>?<247><129>u<144>I..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282574287,ack=3282518687,win=65000) with 1000 data bytes "&3<147><186><203><220><14>V<200>z<215><145><2><196><223><200>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282519687,ack=3282518687,win=65000) with 1000 data bytes "<132><187>Y<19><140><27><241><228><29><154><217>'<198><214><144><177>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282583218,ack=3282518687,win=65000) with 469 data bytes "K.<24><250>X<143>Fi<236><189><131>`E<15><204><216>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282542124,ack=3282518687,win=65000) with 1000 data bytes "<148><144><196><248><140><244><234><134><231><152><130><27><209>R<181>}..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282534794,ack=3282518687,win=65000) with 1000 data bytes "<154><24><251>xN<30><153><4><191><202>t<210>7<233><158><133>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282532227,ack=3282518687,win=65000) with 567 data bytes "l<205>$<129><190><230><216><143><198><215>`<186><149><172><238><22>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282557096,ack=3282518687,win=65000) with 382 data bytes "<166>V<218><189>7/<23>J<162>B'<182><176><215>G<194>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282544967,ack=3282518687,win=65000) with 1000 data bytes "<127>{<28>#!<206>F0$$<209><213>Q1r<236>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282581189,ack=3282518687,win=65000) with 1000 data bytes "T<166><159>I}<146>K<149><5><145>xT<9><131>bW..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282525893,ack=3282518687,win=65000) with 549 data bytes "<236><228>]<0>\<156>Z/<221><213><0><225><178><214><M..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282562232,ack=3282518687,win=65000) with 1000 data bytes "<169><207><247><29><241><251><199><12><151>G<15>jN<236><138>%..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282573287,ack=3282518687,win=65000) with 1000 data bytes "<172><9><132>Z<3>[2<253>y`<165><137>%<208>$<196>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282561232,ack=3282518687,win=65000) with 1000 data bytes "><245><214><137><249><153>rg3sQ<24><199>$<192><5>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282552096,ack=3282518687,win=65000) with 1000 data bytes "<202><177>zj~`n<135><199><253>)<155><247><254><213><215>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282540124,ack=3282518687,win=65000) with 1000 data bytes "<228><16><161>m<200><253><165><6><197><11>g.<129><10>4<129>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282553096,ack=3282518687,win=65000) with 1000 data bytes "l<129>5<192><14><242><181><151>z[<240><190><249><136><221><132>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282535794,ack=3282518687,win=65000) with 1000 data bytes "<22><21><17><217><250>*<188><146><167>x<163><238>cR<129>3..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282529442,ack=3282518687,win=65000) with 1000 data bytes "n<31>^-<207>=<218><212><212><27><25><228><206>t<133><169>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282546717,ack=3282518687,win=65000) with 1000 data bytes "<212><205>L+<208><182>P<167><169><252>e<134>G#<226><216>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282526442,ack=3282518687,win=65000) with 1000 data bytes "<16>#I<183><161>G{O%[<196><165><17>*<206>E..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282541124,ack=3282518687,win=65000) with 1000 data bytes "S<134><255><245><9><205>>/<192><250><225>NR%<129>g..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282528442,ack=3282518687,win=65000) with 1000 data bytes "<128>)BU<165>;<177><229><161><201><230><189><173><252><141>v..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282521687,ack=3282518687,win=65000) with 206 data bytes "+2ps<165><207><19><246>W<131>F<195><168>y<10><183>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282543967,ack=3282518687,win=65000) with 1000 data bytes "<223><228>><174><143>$<168><153><212>B<148><239>nj<209>n..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282524893,ack=3282518687,win=65000) with 1000 data bytes "<230>5<170><166>E<156>Z<8><236><132><15><213><14><208>G|..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282566304,ack=3282518687,win=65000) with 1000 data bytes "8<148><175><226>l$+y<169><4>|vwG<178>O..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282578287,ack=3282518687,win=65000) with 902 data bytes "<218><220><19>'<213>p<209><30>=<<196>jXR<<222>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282567304,ack=3282518687,win=65000) with 1000 data bytes "U<31><140>&<138><217><242><208><175><31><24><149><207><140><6><209>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282570304,ack=3282518687,win=65000) with 1000 data bytes "WQ<154><250><213>z\<203>}<202><177>U<20><249><127><138>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282550439,ack=3282518687,win=65000) with 657 data bytes "<176><177><230>H<217>9^<197><204>E!<215><198><24><229><7>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282531442,ack=3282518687,win=65000) with 785 data bytes "<167><17><177><236><4><181><227><176>D<191>3<8><156><171><178><20>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282545967,ack=3282518687,win=65000) with 750 data bytes "<171><171><223>g<130>g$<236>G<145><233>>/<236><28><26>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282572287,ack=3282518687,win=65000) with 1000 data bytes "R<169><5>-<224><17><130><165><27>G<191><4>c<172><138>W..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282520687,ack=3282518687,win=65000) with 1000 data bytes "P<4><148>'6(?<27>"<168><225><12>g<188><152><180>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282577287,ack=3282518687,win=65000) with 1000 data bytes "<241><147><157><150><142><254>&<152><171><186><242><195>E<205><161>k..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282576287,ack=3282518687,win=65000) with 1000 data bytes "<217>L<149><201><155><151>=d&X<28><209><246>)<197><179>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282579189,ack=3282518687,win=65000) with 1000 data bytes "<27><167><237><14><28><247>wM(/k<238><191><18>]P..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282557478,ack=3282518687,win=65000) with 1000 data bytes "<187><227><143>6<231><176><190><30>b<209><165><238><9><130><171><233>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282538794,ack=3282518687,win=65000) with 330 data bytes "<239><168><244>H<197><185><190><157><185>o<211><231>q<219><145><243>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282583189,ack=3282518687,win=65000) with 29 data bytes "G.<158><21><2>jU<221><208>'<233><159><154><157><220><145>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282571304,ack=3282518687,win=65000) with 983 data bytes "<184><5><15><189><215>N<133><150><129>W+<147><199><252><23>W..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282580189,ack=3282518687,win=65000) with 1000 data bytes "<201>\<132><240><173><<239>9<139>K<173><158>Z<152><144><222>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282527442,ack=3282518687,win=65000) with 1000 data bytes "}f^,#<2><23>K<208><223>-<14><15>*6<134>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282530442,ack=3282518687,win=65000) with 1000 data bytes "<255><198>n3L"<177><174><144><31>k<137><208><28>Iz..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282533794,ack=3282518687,win=65000) with 1000 data bytes "^<176><151><236>d<130><190><180><238>:<168><3>9<243><133><217>..."
+        Action:      1ms pass
+        Expectation: exactly one segment sent with (A=1,)
+        Expectation: no (more) segments sent
+        Action:      packet arrives: Header(flags=A,seqno=3282518687,ack=3282518687,win=65000) with 1000 data bytes "6<13><246>8:<165>^xp/^<203><251>3v(..."
+        Action:      1ms pass
+71 51

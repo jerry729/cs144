@@ -13,6 +13,7 @@ using namespace std;
 void TCPReceiver::segment_received(const TCPSegment &seg) {
 
     const TCPHeader& header = seg.header();
+    uint64_t old_ack = _reassembler.expected_index();
 
     if(header.syn){
         _syn_rcved = true;
@@ -47,6 +48,10 @@ void TCPReceiver::segment_received(const TCPSegment &seg) {
     //printf("++%d++ ack:%u\n",++tst_i, _ack->raw_value());
 
     _reassembler.push_substring(pl, tmp, header.fin);
+
+    if(old_ack != _reassembler.expected_index()){
+        _ack_updated = true;
+    }
     _ack = wrap(_reassembler.expected_index() + 1, _isn.value());
     //printf("--%d-- ack:%u\n",++tst_i, _ack->raw_value());
 
@@ -69,4 +74,8 @@ optional<WrappingInt32> TCPReceiver::ackno() const {
 
 size_t TCPReceiver::window_size() const {
     return _capacity - stream_out().written_not_read();
+}
+
+bool& TCPReceiver::ack_updated(){
+    return _ack_updated;
 }
