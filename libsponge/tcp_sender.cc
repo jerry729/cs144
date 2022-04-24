@@ -21,7 +21,7 @@ TCPSender::TCPSender(const size_t capacity, const uint16_t retx_timeout, const s
     , _timer(retx_timeout) {}
 
 uint64_t TCPSender::bytes_in_flight() const {
-    //printf("%lu \n", _segments_outstanding.back().length_in_sequence_space() + _segments_outstanding.back().header().seqno.raw_value() - _segments_outstanding.front().header().seqno.raw_value());
+
     if(_segments_outstanding.empty()){
         return 0;
     }
@@ -55,9 +55,6 @@ void TCPSender::fill_window() {
             _syn_sent = true;
             payload_len -= 1;
         }
-
-        // string bs = _stream.peek_output(_stream.buffer_size());
-        // printf("%s \n##################\n", bs.c_str());
 
         if(!_stream.buffer_empty()){
             //there still are new bytes to be read

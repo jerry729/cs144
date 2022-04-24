@@ -2,14 +2,6 @@
 
 #include <iostream>
 
-// Dummy implementation of a TCP connection
-
-// For Lab 4, please replace with a real implementation that passes the
-// automated checks run by `make check`.
-
-template <typename... Targs>
-void DUMMY_CODE(Targs &&... /* unused */) {}
-
 using namespace std;
 
 size_t TCPConnection::remaining_outbound_capacity() const {
@@ -70,7 +62,6 @@ void TCPConnection::segment_received(const TCPSegment &seg) {
     if(_receiver.ackno().has_value()
     && hd.seqno.raw_value() >= (_receiver.ackno().value() + _receiver.window_size()).raw_value()
     && (!(_receiver.window_size() == 0))){
-        printf("%u %u \n",  hd.seqno.raw_value(), (_receiver.ackno().value() + _receiver.window_size()).raw_value());
         _sender.send_empty_segment();
         check_ackno_n_winsize_of_local_rcver();
         return;
